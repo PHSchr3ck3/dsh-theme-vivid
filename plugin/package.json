@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "bin": {
-    "dsh-theme-vivid": "./cli.mjs"
+    "dsh-theme-vivid": "cli.mjs"
   },
   "exports": {
     ".": "./index.js",
