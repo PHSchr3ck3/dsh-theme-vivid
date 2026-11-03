@@ -18,7 +18,7 @@ client half adds a *Color theme* row under **Settings > General**.
 | | |
 |---|---|
 | Package | [`dsh-theme-vivid`](https://www.npmjs.com/package/dsh-theme-vivid) on npm |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Install | `npm install --prefix "<profile>" dsh-theme-vivid` |
 | Palettes | `aurora`, `ember`, `mint`, `sakura`, `iris`, `slate`, `moss`, `crimson`, `arctic`, `voltage`, `sand`, `noir` — each light and dark |
 | Host hook | `webserver/index-inject`, one `<style>` line, no harness patches |
@@ -89,13 +89,20 @@ The package ships its own `cordis.patch.yml`, so the DSH plugin manager picks it
 without further steps. **Restart the app afterwards:** the desktop profile collects its
 injection table once at boot, reloading the window is not enough.
 
+All twelve palettes can also be exported without touching a profile:
+
+```powershell
+npx dsh-theme-vivid list              # ids ausgeben
+npx dsh-theme-vivid export .\themes  # alle CSS-Dateien kopieren
+```
+
 ### From the release tarball
 
 No registry account needed. Download the packed plugin and install it locally:
 
 ```powershell
-curl.exe -L -o dsh-theme-vivid-1.0.0.tgz https://github.com/PHSchr3ck3/dsh-theme-vivid/releases/download/v1.0.0/dsh-theme-vivid-1.0.0.tgz
-npm install --prefix "<profile>" .\dsh-theme-vivid-1.0.0.tgz
+curl.exe -L -o dsh-theme-vivid-1.1.0.tgz https://github.com/PHSchr3ck3/dsh-theme-vivid/releases/download/v1.1.0/dsh-theme-vivid-1.1.0.tgz
+npm install --prefix "<profile>" .\dsh-theme-vivid-1.1.0.tgz
 ```
 
 Recent npm versions refuse to fetch a remote URL directly (`EALLOWREMOTE`), so the

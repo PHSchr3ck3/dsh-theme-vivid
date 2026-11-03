@@ -1,9 +1,12 @@
 {
   "name": "dsh-theme-vivid",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Vivid colour themes for DeepSeek Harness: twelve palettes from Aurora to Noir, each with a light and a dark variant.",
   "type": "module",
   "main": "index.js",
+  "bin": {
+    "dsh-theme-vivid": "./cli.mjs"
+  },
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
@@ -12,6 +15,7 @@
   "files": [
     "index.js",
     "client.js",
+    "cli.mjs",
     "cordis.patch.yml",
     "themes/",
     "README.md"

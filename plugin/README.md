@@ -33,6 +33,13 @@ eingesammelt. Nach Installation oder Theme-Wechsel die App neu starten.
 
 `DSH_VIVID_CSS` (Umgebungsvariable) gewinnt gegen beides.
 
+## Alle Paletten exportieren
+
+```powershell
+npx dsh-theme-vivid list              # ids ausgeben
+npx dsh-theme-vivid export .\themes  # fertige CSS-Dateien kopieren
+```
+
 ## Deinstallation
 
 ```powershell
