@@ -1,0 +1,214 @@
+/* Vorschau-Grundgeruest: bildet die DSH-Oberflaeche mit denselben Tokens
+   nach, damit die Palette exakt so wirkt wie im echten Harness.
+   Alle var() haben Fallbacks, damit die Seite auch ohne Theme steht. */
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; margin: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--dsw-alias-label-primary, #e6e9ef);
+  background: var(--dsw-alias-bg-base, #0f1319);
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 226px minmax(0, 1fr);
+  height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 10px;
+  background: var(--dsw-specific-sidebar-fill, #121721);
+  border-right: 1px solid var(--dsw-alias-border-l1, #ffffff1a);
+}
+
+.brand {
+  padding: 4px 10px 16px;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--dsw-alias-brand-text, #a9c4ff);
+}
+
+.nav {
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: var(--dsw-alias-label-secondary, #a8b3c7);
+}
+
+.nav:hover { background: var(--dsw-specific-sidebar-nav-item-hover, #7ca8ff14); }
+
+.nav.active {
+  color: var(--dsw-alias-label-primary, #e4e9f3);
+  background: var(--dsw-specific-sidebar-nav-item-active, #7ca8ff24);
+  box-shadow: inset 2px 0 0 var(--dsw-specific-sidebar-nav-item-active-accent, #7ca8ff);
+}
+
+.sidebar-foot {
+  margin-top: auto;
+  padding: 8px 10px 2px;
+  font-size: 11.5px;
+  color: var(--dsw-alias-label-caption, #6e7889);
+}
+
+/* ---------- Hauptbereich ---------- */
+.main { display: flex; flex-direction: column; min-width: 0; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--dsw-alias-border-l1, #ffffff1a);
+}
+
+.title { font-size: 13.5px; font-weight: 560; }
+
+.pill {
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--dsw-alias-border-l2, #ffffff2e);
+  font-size: 11.5px;
+  color: var(--dsw-alias-label-tertiary, #828da1);
+}
+
+.spacer { margin-left: auto; }
+
+.ghost-button {
+  padding: 5px 11px;
+  border: 1px solid var(--dsw-alias-border-l2, #ffffff2e);
+  border-radius: 8px;
+  background: none;
+  color: var(--dsw-alias-label-secondary, #a8b3c7);
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.ghost-button:hover { background: var(--dsw-alias-interactive-bg-hover, #7ca8ff14); }
+
+/* ---------- Transkript ---------- */
+[data-conversation-content] {
+  flex: 1;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 24px 30px 48px;
+  overflow: auto;
+}
+
+.turn { margin-bottom: 28px; }
+
+.bubble-user {
+  max-width: 76%;
+  margin-left: auto;
+  padding: 10px 14px;
+  border: 1px solid var(--dsw-alias-border-l1, #ffffff1a);
+  border-radius: 14px;
+  background: var(--dsw-alias-bg-layer-2, #1a212c);
+  color: var(--dsw-alias-label-primary, #e4e9f3);
+}
+
+.role {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--dsw-alias-label-caption, #6e7889);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dsw-alias-brand-primary, #7ca8ff);
+}
+
+.dot.ok { background: var(--dsw-alias-state-success-primary, #4ed2a6); }
+.dot.warn { background: var(--dsw-alias-state-warn-primary, #f0b45e); }
+.dot.err { background: var(--dsw-alias-state-error-primary, #f1798a); }
+
+/* ---------- Tool-Zeile ---------- */
+.tool {
+  margin: 10px 0 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--dsw-alias-border-l1, #ffffff1a);
+  border-radius: 12px;
+  background: var(--dsw-alias-bg-layer-1, #151a23);
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 12.5px;
+  color: var(--dsw-alias-label-tertiary, #828da1);
+}
+
+.tool-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: var(--dsw-alias-label-secondary, #a8b3c7);
+  font-weight: 600;
+}
+
+.tool-body {
+  white-space: pre-wrap;
+  color: var(--dsw-alias-label-primary, #e4e9f3);
+}
+
+/* ---------- Codeblock-Karte ---------- */
+.code-card {
+  margin: 12px 0;
+  border: 1px solid var(--dsw-alias-border-l1, #ffffff1a);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.code-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--dsw-alias-markdown-code-block-banner, #7ca8ff1f);
+  font-size: 11.5px;
+  color: var(--dsw-alias-label-tertiary, #828da1);
+}
+
+.code-body {
+  margin: 0;
+  padding: 12px 14px;
+  background: var(--dsw-alias-markdown-code-block, #7ca8ff12);
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.62;
+  overflow: auto;
+}
+
+.tok-key { color: var(--dsw-alias-state-business-primary, #9aa8ff); }
+.tok-str { color: var(--dsw-alias-state-success-primary, #4ed2a6); }
+.tok-num { color: var(--dsw-alias-state-warn-primary, #f0b45e); }
+.tok-com { color: var(--dsw-alias-label-caption, #6e7889); }
+
+/* ---------- Markdown-Basics im Mock ---------- */
+h1, h2, h3, h4 { margin: 1.1em 0 0.5em; line-height: 1.32; }
+h1 { font-size: 22px; }
+h2 { font-size: 18px; }
+h3 { font-size: 16px; }
+p { margin: 0.65em 0; }
+ul { margin: 0.6em 0; padding-left: 1.35em; }
+li { margin: 0.25em 0; }
+
+table { margin: 12px 0; font-size: 13px; }
+th, td { padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--dsw-alias-border-l1, #ffffff1a); }

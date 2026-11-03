@@ -1,0 +1,180 @@
+/* =========================================================================
+   Palette: MINT  —  ruhiges Teal/Gruen, sehr entspannt fuer die Augen
+   Niedrige Blauanteile, weiche Kontraste, gruene Akzente.
+   ========================================================================= */
+
+/* ---------- Dunkelmodus ---------- */
+html body[data-ds-dark-theme] {
+  --dsw-alias-bg-base: #0c1312;
+  --dsw-alias-bg-layer-1: #111a18;
+  --dsw-alias-bg-layer-2: #16211f;
+  --dsw-alias-bg-layer-3: #1d2a27;
+  --dsw-alias-bg-overlay: #081010f2;
+  --dsw-alias-bg-mask-1: #081010b3;
+  --dsw-alias-bg-mask-2: #081010d9;
+  --dsw-alias-bg-mask-3: #081010f2;
+  --dsw-alias-bg-skeleton: #172421;
+
+  --dsw-alias-border-l1: #59d3b429;
+  --dsw-alias-border-l2: #59d3b438;
+  --dsw-alias-border-l3: #59d3b44d;
+  --dsw-alias-border-l4: #59d3b46b;
+
+  --dsw-alias-label-primary: #dfede9;
+  --dsw-alias-label-primary-bluish: #d7ece6;
+  --dsw-alias-label-primary-dimmed: #bdd0cb;
+  --dsw-alias-label-secondary: #a6bab5;
+  --dsw-alias-label-tertiary: #7f938e;
+  --dsw-alias-label-caption: #6b7f7a;
+  --dsw-alias-label-dimmed: #596b67;
+  --dsw-alias-link: #6fe0c0;
+
+  --dsw-alias-brand-primary: #59d3b4;
+  --dsw-alias-brand-primary-invert: #0c1312;
+  --dsw-alias-brand-text: #96e9d4;
+  --dsw-alias-interactive-bg-hover: #59d3b414;
+  --dsw-alias-interactive-bg-active: #59d3b422;
+  --dsw-alias-interactive-bg-hover-accent: #59d3b426;
+  --dsw-alias-button-primary-fill: #3fbf9f;
+  --dsw-alias-button-primary-hover: #56d6b4;
+  --dsw-alias-button-ghost-active-fill: #59d3b41f;
+  --dsw-alias-button-ghost-active-border: #59d3b447;
+  --dsw-alias-button-ghost-active-hover: #59d3b42e;
+
+  --dsw-alias-markdown-code-block: #59d3b40f;
+  --dsw-alias-markdown-code-block-banner: #59d3b41a;
+  --dsw-alias-markdown-inline-code: #59d3b421;
+  --dsw-alias-markdown-citation: #59d3b43d;
+  --dsw-alias-markdown-tag: #59d3b42b;
+
+  --dsw-alias-state-success-primary: #4fd6a9;
+  --dsw-alias-state-success-secondary: #4fd6a926;
+  --dsw-alias-state-success-tertiary: #4fd6a914;
+  --dsw-alias-state-warn-primary: #e9c46a;
+  --dsw-alias-state-warn-label: #f0d48c;
+  --dsw-alias-state-warn-secondary: #e9c46a26;
+  --dsw-alias-state-warn-tertiary: #e9c46a14;
+  --dsw-alias-state-error-primary: #ef8a80;
+  --dsw-alias-state-error-secondary: #ef8a8026;
+  --dsw-alias-state-business-primary: #7fb0ff;
+  --dsw-alias-state-business-tertiary: #7fb0ff26;
+  --dsw-alias-state-idle-primary: #7a8f8a;
+
+  --dsw-alias-settings-card-fill: #121c1a;
+  --dsw-alias-settings-card-stroke: #59d3b42e;
+  --dsw-alias-turn-trigger-bg: #111a18;
+  --dsw-alias-turn-trigger-bg-hover: #19251f;
+  --dsw-alias-toast-bg: #17241f;
+  --dsw-alias-toast-label: #dfede9;
+  --dsw-alias-tooltip-bg: #1c2a26;
+  --dsw-alias-tooltip-key-bg: #27352f;
+  --dsw-alias-menu-icon: #a6bab5;
+  --dsw-alias-menu-group-header-fill: #59d3b40f;
+  --dsw-alias-scrollbar-bg-l1: #59d3b438;
+  --dsw-alias-scrollbar-hover-l1: #59d3b45c;
+  --dsw-alias-scrollbar-bg-l2: #59d3b442;
+  --dsw-alias-scrollbar-hover-l2: #59d3b466;
+
+  --vv-accent: #59d3b4;
+  --vv-heading: #8de8d0;
+  --vv-heading-soft: #7fc7b4;
+  --vv-strong: #f0fffa;
+  --vv-line: #59d3b433;
+  --vv-line-soft: #59d3b424;
+  --vv-link-underline: #6fe0c073;
+  --vv-code-bg: #59d3b40d;
+  --vv-inline-code-bg: #59d3b41f;
+  --vv-inline-code-border: #6fe0c038;
+  --vv-inline-code-fg: #b8f2e4;
+  --vv-quote-bg: #59d3b40d;
+  --vv-table-head: #59d3b41a;
+  --vv-table-zebra: #ffffff08;
+  --vv-marker: #59d3b4;
+  --vv-selection: #59d3b44d;
+  --vv-glow: #59d3b417;
+  --vv-glow-2: #5a9cff12;
+  --vv-sidebar-fill: #0f1716;
+  --vv-hover: #59d3b414;
+  --vv-active: #59d3b424;
+  --vv-tip: #16211f;
+}
+
+/* ---------- Hellmodus ---------- */
+html body:not([data-ds-dark-theme]) {
+  --dsw-alias-bg-base: #f4faf8;
+  --dsw-alias-bg-layer-1: #ffffff;
+  --dsw-alias-bg-layer-2: #edf6f3;
+  --dsw-alias-bg-layer-3: #e3efea;
+  --dsw-alias-bg-skeleton: #e8f2ee;
+
+  --dsw-alias-border-l1: #0f55441f;
+  --dsw-alias-border-l2: #0f55442e;
+  --dsw-alias-border-l3: #0f554442;
+  --dsw-alias-border-l4: #0f55445c;
+
+  --dsw-alias-label-primary: #12211d;
+  --dsw-alias-label-primary-bluish: #142821;
+  --dsw-alias-label-secondary: #4a625c;
+  --dsw-alias-label-tertiary: #6a827c;
+  --dsw-alias-label-caption: #7f968f;
+  --dsw-alias-label-dimmed: #9bb0aa;
+  --dsw-alias-link: #12836a;
+
+  --dsw-alias-brand-primary: #12896c;
+  --dsw-alias-brand-text: #0c6b54;
+  --dsw-alias-interactive-bg-hover: #12896c14;
+  --dsw-alias-interactive-bg-active: #12896c22;
+  --dsw-alias-interactive-bg-hover-accent: #12896c1f;
+  --dsw-alias-button-primary-fill: #12896c;
+  --dsw-alias-button-primary-hover: #0c6b54;
+  --dsw-alias-button-ghost-active-fill: #12896c1a;
+  --dsw-alias-button-ghost-active-border: #12896c40;
+  --dsw-alias-button-ghost-active-hover: #12896c26;
+
+  --dsw-alias-markdown-code-block: #12896c0d;
+  --dsw-alias-markdown-code-block-banner: #12896c1a;
+  --dsw-alias-markdown-inline-code: #12896c14;
+  --dsw-alias-state-success-primary: #0f7a5c;
+  --dsw-alias-state-warn-primary: #a1741a;
+  --dsw-alias-state-error-primary: #c4524a;
+  --dsw-alias-state-business-primary: #2f63c9;
+  --dsw-alias-state-idle-primary: #7d938f;
+
+  --dsw-alias-settings-card-fill: #ffffff;
+  --dsw-alias-settings-card-stroke: #0f55441a;
+  --dsw-alias-turn-trigger-bg: #ecf6f2;
+  --dsw-alias-turn-trigger-bg-hover: #e2f0eb;
+  --dsw-alias-toast-bg: #ffffff;
+  --dsw-alias-toast-label: #12211d;
+  --dsw-alias-tooltip-bg: #16211f;
+  --dsw-alias-tooltip-key-bg: #273530;
+  --dsw-alias-menu-icon: #4a625c;
+  --dsw-alias-menu-group-header-fill: #12896c0a;
+  --dsw-alias-scrollbar-bg-l1: #0f554433;
+  --dsw-alias-scrollbar-hover-l1: #0f554452;
+  --dsw-alias-scrollbar-bg-l2: #0f55443d;
+  --dsw-alias-scrollbar-hover-l2: #0f55445c;
+
+  --vv-accent: #12896c;
+  --vv-heading: #0e7a60;
+  --vv-heading-soft: #2c7d68;
+  --vv-strong: #0a1815;
+  --vv-line: #0f55442b;
+  --vv-line-soft: #0f55441f;
+  --vv-link-underline: #12836a73;
+  --vv-code-bg: #12896c0a;
+  --vv-inline-code-bg: #12896c12;
+  --vv-inline-code-border: #12896c2e;
+  --vv-inline-code-fg: #0c5f4b;
+  --vv-quote-bg: #12896c0a;
+  --vv-table-head: #12896c14;
+  --vv-table-zebra: #0f554408;
+  --vv-marker: #12896c;
+  --vv-selection: #2aa88a38;
+  --vv-glow: #4fd6b01a;
+  --vv-glow-2: #5a9cff12;
+  --vv-sidebar-fill: #eff8f5;
+  --vv-hover: #12896c12;
+  --vv-active: #12896c21;
+  --vv-tip: #e6f3ee;
+}

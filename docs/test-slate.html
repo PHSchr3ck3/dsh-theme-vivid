@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DSH Theme · Slate · Pruefblatt</title>
+<link rel="stylesheet" href="mock.css" />
+<link rel="stylesheet" href="dist/slate.css" />
+<style>
+  /* Pruefblatt: zeigt jede Token-Gruppe genau einmal. Alle Farben stammen aus
+     der Palette, damit das Blatt als Testvorlage fuer ein Design dient. */
+  * { box-sizing: border-box; }
+  body { min-height: 100vh; }
+  .sheet { max-width: 1260px; margin: 0 auto; padding: 20px 24px 26px; }
+
+  .sheet-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; padding-bottom: 12px; margin-bottom: 16px; border-bottom: 1px solid var(--dsw-alias-border-l1); }
+  .eyebrow { margin: 0; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dsw-alias-label-caption); }
+  .sheet-head h1 { margin: 3px 0; font-size: 25px; line-height: 1.2; color: var(--vv-heading); }
+  .sub { margin: 0; font-size: 12.5px; color: var(--dsw-alias-label-secondary); }
+  .head-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .head-actions .ghost-button { text-decoration: none; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+  .col { display: grid; gap: 14px; }
+  .panel { border: 1px solid var(--dsw-alias-border-l1); border-radius: 12px; background: var(--dsw-alias-bg-layer-1); padding: 11px 13px 13px; }
+  .panel > h2 { margin: 0 0 10px; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dsw-alias-label-caption); font-weight: 600; }
+
+  /* Flaechen und Linien */
+  .surf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .sw { display: grid; gap: 4px; }
+  .sw i { display: block; height: 30px; border-radius: 7px; border: 1px solid var(--dsw-alias-border-l2); }
+  .sw span { font-size: 10px; color: var(--dsw-alias-label-caption); }
+  .bdl { display: grid; gap: 4px; margin-top: 10px; }
+  .bdl i { display: block; height: 3px; border-radius: 2px; }
+
+  /* Schriftstufen */
+  .ramp { display: grid; gap: 4px; }
+  .ramp div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .ramp b { font-weight: 600; font-size: 12.5px; }
+  .ramp span { font-size: 10px; color: var(--dsw-alias-label-caption); }
+
+  /* Markdown im Transkript-Stil */
+  .md[data-conversation-content] { max-width: none; margin: 0; padding: 0; overflow: visible; }
+  .md h2 { font-size: 15px; margin: 0 0 5px; }
+  .md h3 { font-size: 13px; margin: 8px 0 3px; }
+  .md p { font-size: 12.5px; margin: 0 0 6px; }
+  .md ul { margin: 0 0 6px; padding-left: 1.2em; font-size: 12.5px; }
+  .md li { margin: 1px 0; }
+  .md blockquote { margin: 6px 0; font-size: 12px; }
+  .md pre { margin: 6px 0 0; padding: 8px 10px; font-size: 11.5px; line-height: 1.55; }
+  .md table { margin: 4px 0 0; font-size: 11.5px; }
+  .md th, .md td { padding: 4px 8px; }
+
+  /* Marke, Buttons, Eingabe */
+  .btnrow { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+  .tbtn { padding: 5px 11px; border-radius: 8px; font: inherit; font-size: 12px; cursor: default; }
+  .tbtn-primary { background: var(--dsw-alias-button-primary-fill); color: var(--dsw-alias-brand-primary-invert, #ffffff); border: 1px solid var(--dsw-alias-button-primary-hover); }
+  .tbtn-ghost { background: transparent; border: 1px solid var(--dsw-alias-border-l2); color: var(--dsw-alias-label-primary); }
+  .tbtn-ghost-active { background: var(--dsw-alias-button-ghost-active-fill); border: 1px solid var(--dsw-alias-button-ghost-active-border); color: var(--dsw-alias-brand-text); }
+  .tbtn-hover { background: var(--dsw-alias-interactive-bg-hover); border: 1px solid var(--dsw-alias-border-l1); color: var(--dsw-alias-label-primary); }
+  .tinput { display: block; margin-top: 9px; width: 100%; padding: 6px 9px; border-radius: 8px; border: 1px solid var(--dsw-alias-border-l2); background: var(--dsw-alias-bg-layer-2); color: var(--dsw-alias-label-primary); font-family: inherit; font-size: 12px; }
+  .tinput::placeholder { color: var(--dsw-alias-label-caption); }
+  .tinput:focus { outline: 2px solid var(--dsw-focus-ring-color); outline-offset: 1px; }
+
+  /* Zustaende */
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; font-size: 11.5px; border: 1px solid currentColor; }
+  .chip i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+  /* Chrome: Karte, Toast, Tooltip, Menue */
+  .chrome { display: grid; gap: 7px; }
+  .card-mock { padding: 8px 10px; border-radius: 10px; background: var(--dsw-alias-settings-card-fill); border: 1px solid var(--dsw-alias-settings-card-stroke); font-size: 12px; }
+  .toast-mock { padding: 7px 10px; border-radius: 9px; background: var(--dsw-alias-toast-bg); border: 1px solid var(--dsw-alias-border-l2); color: var(--dsw-alias-toast-label); font-size: 12px; }
+  /* Tooltips sind in jeder Palette dunkel, deshalb fester heller Text. */
+  .tip-mock { justify-self: start; padding: 5px 9px; border-radius: 7px; background: var(--dsw-alias-tooltip-bg); color: #eef2f7; font-size: 11.5px; }
+  .tip-mock kbd { padding: 1px 5px; border-radius: 4px; background: var(--dsw-alias-tooltip-key-bg); font: inherit; font-size: 10.5px; }
+  .menu-mock { padding: 4px 8px; border-radius: 6px; background: var(--dsw-alias-menu-group-header-fill); color: var(--dsw-alias-label-tertiary); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+</style>
+</head>
+<body data-ds-dark-theme>
+
+<div class="sheet">
+  <header class="sheet-head">
+    <div>
+      <p class="eyebrow">Pruefblatt · slate</p>
+      <h1>Slate</h1>
+      <p class="sub">Jede Token-Gruppe der Palette einmal auf einer Seite — zum Vergleichen und Abnehmen.</p>
+    </div>
+    <div class="head-actions">
+      <a class="ghost-button" href="preview-slate.html">Vorschau</a>
+      <button class="ghost-button" id="mode">Hell / Dunkel</button>
+    </div>
+  </header>
+
+  <div class="cols">
+    <div class="col">
+
+      <section class="panel">
+        <h2>Flaechen &amp; Linien</h2>
+        <div class="surf">
+          <div class="sw"><i style="background:var(--dsw-alias-bg-base)"></i><span>base</span></div>
+          <div class="sw"><i style="background:var(--dsw-alias-bg-layer-1)"></i><span>layer-1</span></div>
+          <div class="sw"><i style="background:var(--dsw-alias-bg-layer-2)"></i><span>layer-2</span></div>
+          <div class="sw"><i style="background:var(--dsw-alias-bg-layer-3)"></i><span>layer-3</span></div>
+        </div>
+        <div class="bdl">
+          <i style="background:var(--dsw-alias-border-l1)"></i>
+          <i style="background:var(--dsw-alias-border-l2)"></i>
+          <i style="background:var(--dsw-alias-border-l3)"></i>
+          <i style="background:var(--dsw-alias-border-l4)"></i>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Schriftstufen</h2>
+        <div class="ramp">
+          <div style="color:var(--dsw-alias-label-primary)"><b>primary — Assistent</b><span>label-primary</span></div>
+          <div style="color:var(--dsw-alias-label-secondary)"><b>secondary — Nebeninfo</b><span>label-secondary</span></div>
+          <div style="color:var(--dsw-alias-label-tertiary)"><b>tertiary — Metadaten</b><span>label-tertiary</span></div>
+          <div style="color:var(--dsw-alias-label-caption)"><b>caption — Zeitstempel</b><span>label-caption</span></div>
+          <div style="color:var(--dsw-alias-link)"><b>link — Projekt-Doku</b><span>alias-link</span></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Markdown</h2>
+        <div class="md" data-conversation-content>
+          <h2>Struktur des Werkzeugs</h2>
+          <p>
+            Drei Bausteine: <strong>Scan</strong>, <em>Sort</em> und Report.
+            Einstieg ist <code>src/cli.ts</code>, Details in der <a href="#">Doku</a>.
+          </p>
+          <ul>
+            <li><strong>Scan</strong> — liest das Verzeichnis rekursiv.</li>
+            <li><strong>Sort</strong> — gruppiert nach Jahr/Monat.</li>
+          </ul>
+          <blockquote>Pfade mit Leerzeichen immer quoten.</blockquote>
+          <pre><code><span style="color:var(--dsw-alias-label-caption)">// Einstiegspunkt</span>
+export function main(argv: string[]): number {
+  report(sortByDate(scan(argv[0] ?? '.')));
+  return 0;
+}</code></pre>
+        </div>
+      </section>
+
+    </div>
+    <div class="col">
+
+      <section class="panel">
+        <h2>Marke, Buttons, Eingabe</h2>
+        <div class="btnrow">
+          <button class="tbtn tbtn-primary">Primaer</button>
+          <button class="tbtn tbtn-ghost">Ghost</button>
+          <button class="tbtn tbtn-ghost-active">Aktiv</button>
+          <button class="tbtn tbtn-hover">Hover</button>
+        </div>
+        <input class="tinput" type="text" value="Dateien nach Datum sortieren" />
+      </section>
+
+      <section class="panel">
+        <h2>Zustaende</h2>
+        <div class="chips">
+          <span class="chip" style="color:var(--dsw-alias-state-success-primary);background:var(--dsw-alias-state-success-secondary)"><i></i>Erfolg</span>
+          <span class="chip" style="color:var(--dsw-alias-state-warn-primary);background:var(--dsw-alias-state-warn-secondary)"><i></i>Warnung</span>
+          <span class="chip" style="color:var(--dsw-alias-state-error-primary);background:var(--dsw-alias-state-error-secondary)"><i></i>Fehler</span>
+          <span class="chip" style="color:var(--dsw-alias-state-business-primary);background:var(--dsw-alias-state-business-tertiary)"><i></i>Business</span>
+          <span class="chip" style="color:var(--dsw-alias-state-idle-primary);background:transparent"><i></i>Leerlauf</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Chrome: Karte, Toast, Tooltip</h2>
+        <div class="chrome">
+          <div class="menu-mock">Einstellungen</div>
+          <div class="card-mock">Einstellungen-Karte <span style="color:var(--dsw-alias-label-tertiary)">card-fill / card-stroke</span></div>
+          <div class="toast-mock">Theme gespeichert.</div>
+          <div class="tip-mock">Befehlspalette <kbd>Strg</kbd> + <kbd>K</kbd></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Tabelle</h2>
+        <div class="md" data-conversation-content>
+          <table>
+            <thead>
+              <tr><th>Monat</th><th>Dateien</th><th>Groesse</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2026-09</td><td>128</td><td>2,4 GB</td><td>ok</td></tr>
+              <tr><td>2026-10</td><td>342</td><td>6,1 GB</td><td>ok</td></tr>
+              <tr><td>2026-11</td><td>57</td><td>0,9 GB</td><td>offen</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const body = document.body;
+  // ?mode=hell erlaubt direkte Links und Screenshot-Laeufe ohne Klick.
+  if (new URLSearchParams(location.search).get('mode') === 'hell') {
+    body.removeAttribute('data-ds-dark-theme');
+  }
+  document.getElementById('mode').addEventListener('click', () => {
+    if (body.hasAttribute('data-ds-dark-theme')) body.removeAttribute('data-ds-dark-theme');
+    else body.setAttribute('data-ds-dark-theme', '');
+  });
+</script>
+</body>
+</html>

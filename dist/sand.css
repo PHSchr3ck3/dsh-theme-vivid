@@ -1,0 +1,396 @@
+/* ===== DSH Vivid Theme: Sand =====
+   Generiert von dsh-themes/build.mjs — nicht direkt bearbeiten. */
+
+/* =========================================================================
+   Palette: SAND  —  Pergament und Lehm, warm und fast unbunt
+   Die entspannte Variante fuer Tageslicht: beige Flaechen, ein gedaempfter
+   Ocker-Akzent, keinerlei Blaustich. Im Hellmodus fast wie Papier.
+   ========================================================================= */
+
+/* ---------- Dunkelmodus ---------- */
+html body[data-ds-dark-theme] {
+  /* Flaechen */
+  --dsw-alias-bg-base: #14120e;
+  --dsw-alias-bg-layer-1: #1a1712;
+  --dsw-alias-bg-layer-2: #211d17;
+  --dsw-alias-bg-layer-3: #2a251d;
+  --dsw-alias-bg-overlay: #0f0d09f2;
+  --dsw-alias-bg-mask-1: #0f0d09b3;
+  --dsw-alias-bg-mask-2: #0f0d09d9;
+  --dsw-alias-bg-mask-3: #0f0d09f2;
+  --dsw-alias-bg-skeleton: #27221a;
+
+  /* Linien */
+  --dsw-alias-border-l1: #d7bd8f29;
+  --dsw-alias-border-l2: #d7bd8f38;
+  --dsw-alias-border-l3: #d7bd8f4d;
+  --dsw-alias-border-l4: #d7bd8f6b;
+
+  /* Schrift */
+  --dsw-alias-label-primary: #ece5d8;
+  --dsw-alias-label-primary-bluish: #f0e8da;
+  --dsw-alias-label-primary-dimmed: #cdc2ac;
+  --dsw-alias-label-secondary: #b4a993;
+  --dsw-alias-label-tertiary: #8d8271;
+  --dsw-alias-label-caption: #786e5e;
+  --dsw-alias-label-dimmed: #645b4d;
+  --dsw-alias-link: #e8c48a;
+
+  /* Marke + Interaktion */
+  --dsw-alias-brand-primary: #d3a86a;
+  --dsw-alias-brand-primary-invert: #14120e;
+  --dsw-alias-brand-text: #e8cda0;
+  --dsw-alias-interactive-bg-hover: #d3a86a14;
+  --dsw-alias-interactive-bg-active: #d3a86a22;
+  --dsw-alias-interactive-bg-hover-accent: #d3a86a26;
+  --dsw-alias-button-primary-fill: #b8894a;
+  --dsw-alias-button-primary-hover: #d3a86a;
+  --dsw-alias-button-ghost-active-fill: #d3a86a1f;
+  --dsw-alias-button-ghost-active-border: #d3a86a47;
+  --dsw-alias-button-ghost-active-hover: #d3a86a2e;
+
+  /* Markdown */
+  --dsw-alias-markdown-code-block: #d3a86a0f;
+  --dsw-alias-markdown-code-block-banner: #d3a86a1a;
+  --dsw-alias-markdown-inline-code: #e2bd8321;
+  --dsw-alias-markdown-citation: #d3a86a3d;
+  --dsw-alias-markdown-tag: #d3a86a2b;
+
+  /* Zustaende */
+  --dsw-alias-state-success-primary: #86cf9e;
+  --dsw-alias-state-success-secondary: #86cf9e26;
+  --dsw-alias-state-success-tertiary: #86cf9e14;
+  --dsw-alias-state-warn-primary: #f0bf6a;
+  --dsw-alias-state-warn-label: #f7d193;
+  --dsw-alias-state-warn-secondary: #f0bf6a26;
+  --dsw-alias-state-warn-tertiary: #f0bf6a14;
+  --dsw-alias-state-error-primary: #ef8f83;
+  --dsw-alias-state-error-secondary: #ef8f8326;
+  --dsw-alias-state-business-primary: #9daee6;
+  --dsw-alias-state-business-tertiary: #9daee626;
+  --dsw-alias-state-idle-primary: #887f70;
+
+  /* Chrome */
+  --dsw-alias-settings-card-fill: #1b1813;
+  --dsw-alias-settings-card-stroke: #d7bd8f2e;
+  --dsw-alias-turn-trigger-bg: #1a1712;
+  --dsw-alias-turn-trigger-bg-hover: #241f18;
+  --dsw-alias-toast-bg: #241f18;
+  --dsw-alias-toast-label: #ece5d8;
+  --dsw-alias-tooltip-bg: #2a251e;
+  --dsw-alias-tooltip-key-bg: #373026;
+  --dsw-alias-menu-icon: #b4a993;
+  --dsw-alias-menu-group-header-fill: #d3a86a0f;
+  --dsw-alias-scrollbar-bg-l1: #d7bd8f38;
+  --dsw-alias-scrollbar-hover-l1: #d7bd8f5c;
+  --dsw-alias-scrollbar-bg-l2: #d7bd8f42;
+  --dsw-alias-scrollbar-hover-l2: #d7bd8f66;
+
+  /* Vivid-Ebene */
+  --vv-accent: #d3a86a;
+  --vv-heading: #ecd3a6;
+  --vv-heading-soft: #c9b391;
+  --vv-strong: #fdf8ef;
+  --vv-line: #d7bd8f33;
+  --vv-line-soft: #d7bd8f24;
+  --vv-link-underline: #e8c48a73;
+  --vv-code-bg: #d3a86a0d;
+  --vv-inline-code-bg: #e2bd831f;
+  --vv-inline-code-border: #e8c89838;
+  --vv-inline-code-fg: #f2e0c4;
+  --vv-quote-bg: #d3a86a0d;
+  --vv-table-head: #d3a86a1a;
+  --vv-table-zebra: #ffffff08;
+  --vv-marker: #d3a86a;
+  --vv-selection: #d3a86a4d;
+  --vv-glow: #e0b57017;
+  --vv-glow-2: #c98a5a12;
+  --vv-sidebar-fill: #16130f;
+  --vv-hover: #d3a86a14;
+  --vv-active: #d3a86a24;
+  --vv-tip: #241f19;
+}
+
+/* ---------- Hellmodus ---------- */
+html body:not([data-ds-dark-theme]) {
+  --dsw-alias-bg-base: #faf6ee;
+  --dsw-alias-bg-layer-1: #ffffff;
+  --dsw-alias-bg-layer-2: #f4eee2;
+  --dsw-alias-bg-layer-3: #ece3d2;
+  --dsw-alias-bg-skeleton: #f0e9da;
+
+  --dsw-alias-border-l1: #4a3a201f;
+  --dsw-alias-border-l2: #4a3a202e;
+  --dsw-alias-border-l3: #4a3a2042;
+  --dsw-alias-border-l4: #4a3a205c;
+
+  --dsw-alias-label-primary: #241f18;
+  --dsw-alias-label-primary-bluish: #2b2419;
+  --dsw-alias-label-secondary: #5f5445;
+  --dsw-alias-label-tertiary: #7a6e5d;
+  --dsw-alias-label-caption: #8f8372;
+  --dsw-alias-label-dimmed: #a89c88;
+  --dsw-alias-link: #8a5a1f;
+
+  --dsw-alias-brand-primary: #9a6a26;
+  --dsw-alias-brand-text: #7d5318;
+  --dsw-alias-interactive-bg-hover: #9a6a2614;
+  --dsw-alias-interactive-bg-active: #9a6a2622;
+  --dsw-alias-interactive-bg-hover-accent: #9a6a261f;
+  --dsw-alias-button-primary-fill: #8d5f20;
+  --dsw-alias-button-primary-hover: #7d5318;
+  --dsw-alias-button-ghost-active-fill: #9a6a261a;
+  --dsw-alias-button-ghost-active-border: #9a6a2640;
+  --dsw-alias-button-ghost-active-hover: #9a6a2626;
+
+  --dsw-alias-markdown-code-block: #8d5f200d;
+  --dsw-alias-markdown-code-block-banner: #8d5f201a;
+  --dsw-alias-markdown-inline-code: #8d5f2014;
+  --dsw-alias-state-success-primary: #157a5c;
+  --dsw-alias-state-warn-primary: #96660f;
+  --dsw-alias-state-error-primary: #bf4a3a;
+  --dsw-alias-state-business-primary: #4a63a0;
+  --dsw-alias-state-idle-primary: #8a8071;
+
+  --dsw-alias-settings-card-fill: #ffffff;
+  --dsw-alias-settings-card-stroke: #4a3a201a;
+  --dsw-alias-turn-trigger-bg: #f4eee2;
+  --dsw-alias-turn-trigger-bg-hover: #eee5d4;
+  --dsw-alias-toast-bg: #ffffff;
+  --dsw-alias-toast-label: #241f18;
+  --dsw-alias-tooltip-bg: #2a251e;
+  --dsw-alias-tooltip-key-bg: #373026;
+  --dsw-alias-menu-icon: #5f5445;
+  --dsw-alias-menu-group-header-fill: #9a6a260a;
+  --dsw-alias-scrollbar-bg-l1: #4a3a2033;
+  --dsw-alias-scrollbar-hover-l1: #4a3a2052;
+  --dsw-alias-scrollbar-bg-l2: #4a3a203d;
+  --dsw-alias-scrollbar-hover-l2: #4a3a205c;
+
+  --vv-accent: #9a6a26;
+  --vv-heading: #7d5318;
+  --vv-heading-soft: #86663c;
+  --vv-strong: #14110c;
+  --vv-line: #4a3a202b;
+  --vv-line-soft: #4a3a201f;
+  --vv-link-underline: #8a5a1f73;
+  --vv-code-bg: #8d5f200a;
+  --vv-inline-code-bg: #8d5f2012;
+  --vv-inline-code-border: #8d5f202e;
+  --vv-inline-code-fg: #6a4210;
+  --vv-quote-bg: #8d5f200a;
+  --vv-table-head: #8d5f2014;
+  --vv-table-zebra: #4a3a2008;
+  --vv-marker: #9a6a26;
+  --vv-selection: #b07f3821;
+  --vv-glow: #e0b5701a;
+  --vv-glow-2: #d79a6a12;
+  --vv-sidebar-fill: #f6efe2;
+  --vv-hover: #7d531812;
+  --vv-active: #7d531821;
+  --vv-tip: #f2ebdc;
+}
+
+
+/* =========================================================================
+   DSH Vivid — gemeinsame Komponenten-Ebene
+   -------------------------------------------------------------------------
+   Diese Datei enthaelt KEINE Farbwerte. Sie liest ausschliesslich die
+   --vv-* Variablen, die jede Palette definiert, und die offiziellen
+   --dsw-* Tokens des Harness. Dadurch ergibt jede Palette automatisch ein
+   stimmiges Gesamtbild.
+   -------------------------------------------------------------------------
+   Selektoren sind absichtlich spezifischer als die Harness-Stylesheets
+   (html body[...] = 0,0,1,2 bzw. 0,0,0,2) und laufen deshalb auch dann,
+   wenn die Runtime-Styles spaeter im Dokument eingefuegt werden.
+   ========================================================================= */
+
+/* ---------- 1. Lese-Komfort: Rhythmus, Auswahl, Fokus ---------- */
+
+html body {
+  /* Etwas mehr Luft zwischen den Zeilen nimmt den harten Kontrast raus. */
+  --dsw-font-markdown-base-line-height: 1.7;
+  --dsw-font-markdown-small-line-height: 1.6;
+  --dsh-content-letter-spacing: 0.012em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Sanfter Farb-Glow oben links: nimmt dem fast schwarzen Canvas die Haerte. */
+html body {
+  background-image: radial-gradient(
+      1200px 520px at 0% -10%,
+      var(--vv-glow) 0%,
+      transparent 62%
+    ),
+    radial-gradient(900px 420px at 100% 0%, var(--vv-glow-2) 0%, transparent 60%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+html body ::selection {
+  background: var(--vv-selection);
+  color: var(--dsw-alias-label-primary);
+}
+
+/* ---------- 2. Prosa: Ueberschriften ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h1,
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h2,
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h3,
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h4 {
+  color: var(--vv-heading);
+  letter-spacing: 0.005em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h1 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--vv-line);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h2 {
+  padding-left: 10px;
+  border-left: 3px solid var(--vv-accent);
+  border-radius: 2px;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h3 {
+  color: var(--vv-heading-soft);
+}
+
+/* ---------- 3. Prosa: Hervorhebungen ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) strong {
+  color: var(--vv-strong);
+  font-weight: 620;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) em {
+  color: var(--vv-heading-soft);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) a {
+  color: var(--dsw-alias-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--vv-link-underline);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) a:hover {
+  color: var(--vv-accent);
+  text-decoration-color: currentColor;
+}
+
+/* ---------- 4. Prosa: Inline-Code als Chip ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :not(pre) > code {
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--vv-inline-code-border);
+  border-radius: 6px;
+  background: var(--vv-inline-code-bg);
+  color: var(--vv-inline-code-fg);
+  font-weight: 500;
+  white-space: break-spaces;
+}
+
+/* ---------- 5. Prosa: Codebloecke ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) pre {
+  border: 1px solid var(--vv-line);
+  border-radius: 12px;
+  background: var(--vv-code-bg);
+  box-shadow: inset 0 1px 0 var(--vv-line-soft);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) pre code {
+  background: none;
+  border: 0;
+  color: var(--dsw-alias-label-primary);
+}
+
+/* ---------- 6. Prosa: Zitate ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) blockquote {
+  margin: 0.85em 0;
+  padding: 0.6em 0.95em;
+  border-left: 3px solid var(--vv-accent);
+  border-radius: 0 10px 10px 0;
+  background: var(--vv-quote-bg);
+  color: var(--dsw-alias-label-secondary);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) blockquote > :first-child {
+  margin-top: 0;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 7. Prosa: Tabellen ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--vv-line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) thead th {
+  background: var(--vv-table-head);
+  color: var(--dsw-alias-label-primary);
+  font-weight: 620;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) tbody tr:nth-child(even) {
+  background: var(--vv-table-zebra);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :is(th, td) {
+  border-color: var(--vv-line-soft);
+}
+
+/* ---------- 8. Prosa: Listen, Trennlinien ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) li::marker {
+  color: var(--vv-marker);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) hr {
+  height: 1px;
+  margin: 1.25em 0;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--vv-line), transparent);
+}
+
+/* ---------- 9. Chrome: Sidebar, Menues, Karten ---------- */
+
+html body {
+  --dsw-specific-sidebar-fill: var(--vv-sidebar-fill);
+  --dsw-specific-sidebar-nav-item-hover: var(--vv-hover);
+  --dsw-specific-sidebar-nav-item-active: var(--vv-active);
+  --dsw-specific-sidebar-nav-item-active-accent: var(--vv-accent);
+  --dsw-specific-tip: var(--vv-tip);
+}
+
+/* Fokusring in der Akzentfarbe statt im Standardblau. */
+html body {
+  --dsw-focus-ring-color: var(--vv-accent);
+}
+
+/* ---------- 10. Statuszeilen farblich lesbar ---------- */
+
+html body [data-status='error'],
+html body [data-state='error'] {
+  --dsw-alias-label-primary: var(--dsw-alias-state-error-primary);
+}
+
+/* ---------- 11. Druck ---------- */
+@media print {
+  html body {
+    background-image: none;
+  }
+}
+

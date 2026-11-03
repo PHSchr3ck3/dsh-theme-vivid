@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DSH Theme · Sand · Vorschau</title>
+<link rel="stylesheet" href="mock.css" />
+<link rel="stylesheet" href="dist/sand.css" />
+</head>
+<body data-ds-dark-theme>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">DeepSeek Harness</div>
+    <div class="nav active">Neue Aufgabe</div>
+    <div class="nav">Sitzungen</div>
+    <div class="nav">Plugins</div>
+    <div class="nav">Einstellungen</div>
+    <div class="sidebar-foot">Theme: Sand</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <span class="title">Theme-Vorschau</span>
+      <span class="pill">qwen3.8 · 131k</span>
+      <span class="pill">Plan: aus</span>
+      <span class="spacer"></span>
+      <a class="ghost-button" href="test-sand.html">Pruefblatt</a>
+      <button class="ghost-button" id="mode">Hell / Dunkel</button>
+    </header>
+
+    <section data-conversation-content>
+
+      <div class="turn">
+        <div class="bubble-user">Bau mir eine kleine CLI, die Dateien nach Datum sortiert, und erklaer mir die Struktur.</div>
+      </div>
+
+      <div class="turn">
+        <div class="role"><span class="dot"></span> Assistent</div>
+
+        <h2>Struktur des Werkzeugs</h2>
+        <p>
+          Ich lege drei kleine Bausteine an: <strong>Scan</strong>, <strong>Sort</strong> und
+          <strong>Report</strong>. Der Einstiegspunkt ist <code>src/cli.ts</code>,
+          die Logik liegt in <code>src/lib/</code>. Details stehen in der
+          <a href="#">Projekt-Doku</a>.
+        </p>
+
+        <ul>
+          <li><strong>Scan</strong> – liest das Verzeichnis rekursiv ein.</li>
+          <li><strong>Sort</strong> – gruppiert nach Jahr/Monat.</li>
+          <li><strong>Report</strong> – schreibt eine <em>lesbare</em> Zusammenfassung.</li>
+        </ul>
+
+        <blockquote>
+          Hinweis: Pfade mit Leerzeichen immer quoten, sonst bricht der Aufruf unter Windows.
+        </blockquote>
+
+        <div class="tool">
+          <div class="tool-head"><span class="dot ok"></span> pwsh · erfolgreich · 0,8 s</div>
+          <div class="tool-body">node .\src\cli.ts --dir "C:\Fotos" --dry-run</div>
+        </div>
+
+        <div class="code-card">
+          <div class="code-head">src/cli.ts</div>
+          <pre class="code-body"><span class="tok-com">// Einstiegspunkt der Sortier-CLI</span>
+<span class="tok-key">export</span> <span class="tok-key">function</span> main(argv: <span class="tok-key">string</span>[]): <span class="tok-key">number</span> {
+  <span class="tok-key">const</span> dir = argv[<span class="tok-num">0</span>] ?? <span class="tok-str">'.'</span>;
+  <span class="tok-key">const</span> files = scan(dir);
+  report(sortByDate(files));
+  <span class="tok-key">return</span> <span class="tok-num">0</span>;
+}</pre>
+        </div>
+
+        <h3>Ergebnis pro Monat</h3>
+        <table>
+          <thead>
+            <tr><th>Monat</th><th>Dateien</th><th>Groesse</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2026-09</td><td>128</td><td>2,4 GB</td><td>ok</td></tr>
+            <tr><td>2026-10</td><td>342</td><td>6,1 GB</td><td>ok</td></tr>
+            <tr><td>2026-11</td><td>57</td><td>0,9 GB</td><td>offen</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          Naechster Schritt: <code>dsh-themes</code> in <strong>dist/</strong> schreiben
+          und die Palette in der Seitenleiste testen.
+        </p>
+
+        <div class="tool">
+          <div class="tool-head"><span class="dot warn"></span> pwsh · Warnung</div>
+          <div class="tool-body">2 Dateien ohne lesbares Datum wurden uebersprungen.</div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</div>
+
+<script>
+  const body = document.body;
+  // ?mode=hell erlaubt direkte Links und Screenshot-Laeufe ohne Klick.
+  if (new URLSearchParams(location.search).get('mode') === 'hell') {
+    body.removeAttribute('data-ds-dark-theme');
+  }
+  document.getElementById('mode').addEventListener('click', () => {
+    if (body.hasAttribute('data-ds-dark-theme')) body.removeAttribute('data-ds-dark-theme');
+    else body.setAttribute('data-ds-dark-theme', '');
+  });
+</script>
+</body>
+</html>

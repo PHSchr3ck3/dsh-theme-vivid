@@ -1,0 +1,70 @@
+{
+  "name": "dsh-theme-vivid",
+  "version": "1.0.0",
+  "description": "Vivid colour themes for DeepSeek Harness: twelve palettes from Aurora to Noir, each with a light and a dark variant.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "themes/",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PHSchr3ck3/dsh-theme-vivid.git"
+  },
+  "homepage": "https://PHSchr3ck3.github.io/dsh-theme-vivid/",
+  "bugs": {
+    "url": "https://github.com/PHSchr3ck3/dsh-theme-vivid/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "theme",
+    "color-theme",
+    "aurora",
+    "ember",
+    "mint",
+    "sakura",
+    "iris",
+    "slate",
+    "moss",
+    "crimson",
+    "arctic",
+    "voltage",
+    "sand",
+    "noir"
+  ],
+  "author": "PHSchr3ck3"
+}

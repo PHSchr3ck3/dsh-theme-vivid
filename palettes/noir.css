@@ -1,0 +1,190 @@
+/* =========================================================================
+   Palette: NOIR  —  reines Schwarz und Silber, OLED-freundlich
+   Fast ohne Farbe: Der Akzent ist helles Silber, Zustaende behalten nur
+   einen Hauch Farbe, damit Fehler und Erfolg noch unterscheidbar sind.
+   Im Hellmodus ein neutrales Papierweiss mit Tintenakzent.
+   ========================================================================= */
+
+/* ---------- Dunkelmodus ---------- */
+html body[data-ds-dark-theme] {
+  /* Flaechen */
+  --dsw-alias-bg-base: #000000;
+  --dsw-alias-bg-layer-1: #08090a;
+  --dsw-alias-bg-layer-2: #0e1011;
+  --dsw-alias-bg-layer-3: #16181a;
+  --dsw-alias-bg-overlay: #000000f2;
+  --dsw-alias-bg-mask-1: #000000b3;
+  --dsw-alias-bg-mask-2: #000000d9;
+  --dsw-alias-bg-mask-3: #000000f2;
+  --dsw-alias-bg-skeleton: #121415;
+
+  /* Linien */
+  --dsw-alias-border-l1: #ffffff29;
+  --dsw-alias-border-l2: #ffffff38;
+  --dsw-alias-border-l3: #ffffff4d;
+  --dsw-alias-border-l4: #ffffff6b;
+
+  /* Schrift */
+  --dsw-alias-label-primary: #f2f4f6;
+  --dsw-alias-label-primary-bluish: #eef4fa;
+  --dsw-alias-label-primary-dimmed: #c8ccd0;
+  --dsw-alias-label-secondary: #a6abb0;
+  --dsw-alias-label-tertiary: #81868b;
+  --dsw-alias-label-caption: #6c7176;
+  --dsw-alias-label-dimmed: #595e63;
+  --dsw-alias-link: #cfd8e0;
+
+  /* Marke + Interaktion */
+  --dsw-alias-brand-primary: #e6eaee;
+  --dsw-alias-brand-primary-invert: #000000;
+  --dsw-alias-brand-text: #f5f7f9;
+  --dsw-alias-interactive-bg-hover: #ffffff14;
+  --dsw-alias-interactive-bg-active: #ffffff22;
+  --dsw-alias-interactive-bg-hover-accent: #ffffff26;
+  --dsw-alias-button-primary-fill: #d4dade;
+  --dsw-alias-button-primary-hover: #ffffff;
+  --dsw-alias-button-ghost-active-fill: #ffffff1f;
+  --dsw-alias-button-ghost-active-border: #ffffff4d;
+  --dsw-alias-button-ghost-active-hover: #ffffff2e;
+
+  /* Markdown */
+  --dsw-alias-markdown-code-block: #ffffff0a;
+  --dsw-alias-markdown-code-block-banner: #ffffff14;
+  --dsw-alias-markdown-inline-code: #ffffff1f;
+  --dsw-alias-markdown-citation: #ffffff38;
+  --dsw-alias-markdown-tag: #ffffff29;
+
+  /* Zustaende */
+  --dsw-alias-state-success-primary: #74d6a8;
+  --dsw-alias-state-success-secondary: #74d6a826;
+  --dsw-alias-state-success-tertiary: #74d6a814;
+  --dsw-alias-state-warn-primary: #e8c46a;
+  --dsw-alias-state-warn-label: #f2d693;
+  --dsw-alias-state-warn-secondary: #e8c46a26;
+  --dsw-alias-state-warn-tertiary: #e8c46a14;
+  --dsw-alias-state-error-primary: #f28d97;
+  --dsw-alias-state-error-secondary: #f28d9726;
+  --dsw-alias-state-business-primary: #a8b4e8;
+  --dsw-alias-state-business-tertiary: #a8b4e826;
+  --dsw-alias-state-idle-primary: #7d8287;
+
+  /* Chrome */
+  --dsw-alias-settings-card-fill: #0b0c0d;
+  --dsw-alias-settings-card-stroke: #ffffff2e;
+  --dsw-alias-turn-trigger-bg: #08090a;
+  --dsw-alias-turn-trigger-bg-hover: #121415;
+  --dsw-alias-toast-bg: #121415;
+  --dsw-alias-toast-label: #f2f4f6;
+  --dsw-alias-tooltip-bg: #191b1d;
+  --dsw-alias-tooltip-key-bg: #24272a;
+  --dsw-alias-menu-icon: #a6abb0;
+  --dsw-alias-menu-group-header-fill: #ffffff0f;
+  --dsw-alias-scrollbar-bg-l1: #ffffff38;
+  --dsw-alias-scrollbar-hover-l1: #ffffff5c;
+  --dsw-alias-scrollbar-bg-l2: #ffffff42;
+  --dsw-alias-scrollbar-hover-l2: #ffffff66;
+
+  /* Vivid-Ebene */
+  --vv-accent: #e6eaee;
+  --vv-heading: #ffffff;
+  --vv-heading-soft: #c3c9cf;
+  --vv-strong: #ffffff;
+  --vv-line: #ffffff33;
+  --vv-line-soft: #ffffff24;
+  --vv-link-underline: #cfd8e073;
+  --vv-code-bg: #ffffff0a;
+  --vv-inline-code-bg: #ffffff1f;
+  --vv-inline-code-border: #ffffff38;
+  --vv-inline-code-fg: #ffffff;
+  --vv-quote-bg: #ffffff0a;
+  --vv-table-head: #ffffff14;
+  --vv-table-zebra: #ffffff08;
+  --vv-marker: #ffffff;
+  --vv-selection: #ffffff4d;
+  --vv-glow: #ffffff10;
+  --vv-glow-2: #c8d4e00c;
+  --vv-sidebar-fill: #050505;
+  --vv-hover: #ffffff14;
+  --vv-active: #ffffff24;
+  --vv-tip: #141617;
+}
+
+/* ---------- Hellmodus ---------- */
+html body:not([data-ds-dark-theme]) {
+  --dsw-alias-bg-base: #f7f8f9;
+  --dsw-alias-bg-layer-1: #ffffff;
+  --dsw-alias-bg-layer-2: #f0f2f3;
+  --dsw-alias-bg-layer-3: #e6e9eb;
+  --dsw-alias-bg-skeleton: #eceff0;
+
+  --dsw-alias-border-l1: #14181c1f;
+  --dsw-alias-border-l2: #14181c2e;
+  --dsw-alias-border-l3: #14181c42;
+  --dsw-alias-border-l4: #14181c5c;
+
+  --dsw-alias-label-primary: #121517;
+  --dsw-alias-label-primary-bluish: #111a22;
+  --dsw-alias-label-secondary: #4f565c;
+  --dsw-alias-label-tertiary: #6b7278;
+  --dsw-alias-label-caption: #7f858b;
+  --dsw-alias-label-dimmed: #9aa0a6;
+  --dsw-alias-link: #2b3f52;
+
+  --dsw-alias-brand-primary: #1f2933;
+  --dsw-alias-brand-text: #121a22;
+  --dsw-alias-interactive-bg-hover: #1f293314;
+  --dsw-alias-interactive-bg-active: #1f293322;
+  --dsw-alias-interactive-bg-hover-accent: #1f29331f;
+  --dsw-alias-button-primary-fill: #202a33;
+  --dsw-alias-button-primary-hover: #121a22;
+  --dsw-alias-button-ghost-active-fill: #1f29331a;
+  --dsw-alias-button-ghost-active-border: #1f293340;
+  --dsw-alias-button-ghost-active-hover: #1f293326;
+
+  --dsw-alias-markdown-code-block: #1f29330d;
+  --dsw-alias-markdown-code-block-banner: #1f29331a;
+  --dsw-alias-markdown-inline-code: #1f293314;
+  --dsw-alias-state-success-primary: #157a63;
+  --dsw-alias-state-warn-primary: #96660f;
+  --dsw-alias-state-error-primary: #b83b4b;
+  --dsw-alias-state-business-primary: #45557e;
+  --dsw-alias-state-idle-primary: #7f858b;
+
+  --dsw-alias-settings-card-fill: #ffffff;
+  --dsw-alias-settings-card-stroke: #14181c1a;
+  --dsw-alias-turn-trigger-bg: #f0f2f3;
+  --dsw-alias-turn-trigger-bg-hover: #e9ecee;
+  --dsw-alias-toast-bg: #ffffff;
+  --dsw-alias-toast-label: #121517;
+  --dsw-alias-tooltip-bg: #191b1d;
+  --dsw-alias-tooltip-key-bg: #24272a;
+  --dsw-alias-menu-icon: #4f565c;
+  --dsw-alias-menu-group-header-fill: #1f29330a;
+  --dsw-alias-scrollbar-bg-l1: #14181c33;
+  --dsw-alias-scrollbar-hover-l1: #14181c52;
+  --dsw-alias-scrollbar-bg-l2: #14181c3d;
+  --dsw-alias-scrollbar-hover-l2: #14181c5c;
+
+  --vv-accent: #1f2933;
+  --vv-heading: #121a22;
+  --vv-heading-soft: #3a4753;
+  --vv-strong: #0a0c0e;
+  --vv-line: #14181c2b;
+  --vv-line-soft: #14181c1f;
+  --vv-link-underline: #2b3f5273;
+  --vv-code-bg: #1f29330a;
+  --vv-inline-code-bg: #1f293312;
+  --vv-inline-code-border: #1f29332e;
+  --vv-inline-code-fg: #1a232b;
+  --vv-quote-bg: #1f29330a;
+  --vv-table-head: #1f293314;
+  --vv-table-zebra: #14181c08;
+  --vv-marker: #1f2933;
+  --vv-selection: #1f293338;
+  --vv-glow: #9aa8b41a;
+  --vv-glow-2: #b4bcc41a;
+  --vv-sidebar-fill: #f1f3f4;
+  --vv-hover: #1f293312;
+  --vv-active: #1f293321;
+  --vv-tip: #eef0f2;
+}

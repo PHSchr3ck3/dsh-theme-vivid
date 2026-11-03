@@ -1,0 +1,189 @@
+/* =========================================================================
+   Palette: CRIMSON  —  Granatrot auf warmem Dunkelbraun
+   Kuehn statt brav: ein kraeftiger roter Akzent, der trotzdem nicht blendet.
+   Fuer alle, die beim Blick auf die Oberflaeche wach bleiben wollen.
+   ========================================================================= */
+
+/* ---------- Dunkelmodus ---------- */
+html body[data-ds-dark-theme] {
+  /* Flaechen */
+  --dsw-alias-bg-base: #150b0e;
+  --dsw-alias-bg-layer-1: #1c1014;
+  --dsw-alias-bg-layer-2: #23151a;
+  --dsw-alias-bg-layer-3: #2d1b21;
+  --dsw-alias-bg-overlay: #0f0709f2;
+  --dsw-alias-bg-mask-1: #0f0709b3;
+  --dsw-alias-bg-mask-2: #0f0709d9;
+  --dsw-alias-bg-mask-3: #0f0709f2;
+  --dsw-alias-bg-skeleton: #2a1a20;
+
+  /* Linien */
+  --dsw-alias-border-l1: #f08a9f29;
+  --dsw-alias-border-l2: #f08a9f38;
+  --dsw-alias-border-l3: #f08a9f4d;
+  --dsw-alias-border-l4: #f08a9f6b;
+
+  /* Schrift */
+  --dsw-alias-label-primary: #f0e3e7;
+  --dsw-alias-label-primary-bluish: #f7e5ea;
+  --dsw-alias-label-primary-dimmed: #d1bfc4;
+  --dsw-alias-label-secondary: #bda9ae;
+  --dsw-alias-label-tertiary: #968088;
+  --dsw-alias-label-caption: #816b72;
+  --dsw-alias-label-dimmed: #6c585f;
+  --dsw-alias-link: #ff9fb0;
+
+  /* Marke + Interaktion */
+  --dsw-alias-brand-primary: #f2687f;
+  --dsw-alias-brand-primary-invert: #150b0e;
+  --dsw-alias-brand-text: #ffb4c0;
+  --dsw-alias-interactive-bg-hover: #f2687f14;
+  --dsw-alias-interactive-bg-active: #f2687f22;
+  --dsw-alias-interactive-bg-hover-accent: #f2687f26;
+  --dsw-alias-button-primary-fill: #d94a63;
+  --dsw-alias-button-primary-hover: #f2687f;
+  --dsw-alias-button-ghost-active-fill: #f2687f1f;
+  --dsw-alias-button-ghost-active-border: #f2687f47;
+  --dsw-alias-button-ghost-active-hover: #f2687f2e;
+
+  /* Markdown */
+  --dsw-alias-markdown-code-block: #f2687f0f;
+  --dsw-alias-markdown-code-block-banner: #f2687f1a;
+  --dsw-alias-markdown-inline-code: #ff8a9c21;
+  --dsw-alias-markdown-citation: #f2687f3d;
+  --dsw-alias-markdown-tag: #f2687f2b;
+
+  /* Zustaende */
+  --dsw-alias-state-success-primary: #6fd1a8;
+  --dsw-alias-state-success-secondary: #6fd1a826;
+  --dsw-alias-state-success-tertiary: #6fd1a814;
+  --dsw-alias-state-warn-primary: #f0c06a;
+  --dsw-alias-state-warn-label: #f7d38d;
+  --dsw-alias-state-warn-secondary: #f0c06a26;
+  --dsw-alias-state-warn-tertiary: #f0c06a14;
+  --dsw-alias-state-error-primary: #ff8fa0;
+  --dsw-alias-state-error-secondary: #ff8fa026;
+  --dsw-alias-state-business-primary: #b4a0ff;
+  --dsw-alias-state-business-tertiary: #b4a0ff26;
+  --dsw-alias-state-idle-primary: #8b7a80;
+
+  /* Chrome */
+  --dsw-alias-settings-card-fill: #1e1116;
+  --dsw-alias-settings-card-stroke: #f08a9f2e;
+  --dsw-alias-turn-trigger-bg: #1c1014;
+  --dsw-alias-turn-trigger-bg-hover: #29181e;
+  --dsw-alias-toast-bg: #29181e;
+  --dsw-alias-toast-label: #f0e3e7;
+  --dsw-alias-tooltip-bg: #2f1c22;
+  --dsw-alias-tooltip-key-bg: #3b252c;
+  --dsw-alias-menu-icon: #bda9ae;
+  --dsw-alias-menu-group-header-fill: #f2687f0f;
+  --dsw-alias-scrollbar-bg-l1: #f08a9f38;
+  --dsw-alias-scrollbar-hover-l1: #f08a9f5c;
+  --dsw-alias-scrollbar-bg-l2: #f08a9f42;
+  --dsw-alias-scrollbar-hover-l2: #f08a9f66;
+
+  /* Vivid-Ebene */
+  --vv-accent: #f2687f;
+  --vv-heading: #ffb4c0;
+  --vv-heading-soft: #e6a3ae;
+  --vv-strong: #fff2f4;
+  --vv-line: #f08a9f33;
+  --vv-line-soft: #f08a9f24;
+  --vv-link-underline: #ff9fb073;
+  --vv-code-bg: #f2687f0d;
+  --vv-inline-code-bg: #ff8a9c1f;
+  --vv-inline-code-border: #ffa0b038;
+  --vv-inline-code-fg: #ffd0d9;
+  --vv-quote-bg: #f2687f0d;
+  --vv-table-head: #f2687f1a;
+  --vv-table-zebra: #ffffff08;
+  --vv-marker: #f2687f;
+  --vv-selection: #f2687f4d;
+  --vv-glow: #ff5a7a17;
+  --vv-glow-2: #ff8a4a12;
+  --vv-sidebar-fill: #170d11;
+  --vv-hover: #f2687f14;
+  --vv-active: #f2687f24;
+  --vv-tip: #27161c;
+}
+
+/* ---------- Hellmodus ---------- */
+html body:not([data-ds-dark-theme]) {
+  --dsw-alias-bg-base: #fdf4f5;
+  --dsw-alias-bg-layer-1: #ffffff;
+  --dsw-alias-bg-layer-2: #fbeaec;
+  --dsw-alias-bg-layer-3: #f5dfe2;
+  --dsw-alias-bg-skeleton: #f7e7ea;
+
+  --dsw-alias-border-l1: #5c1a281f;
+  --dsw-alias-border-l2: #5c1a282e;
+  --dsw-alias-border-l3: #5c1a2842;
+  --dsw-alias-border-l4: #5c1a285c;
+
+  --dsw-alias-label-primary: #2a171b;
+  --dsw-alias-label-primary-bluish: #331a21;
+  --dsw-alias-label-secondary: #6b5258;
+  --dsw-alias-label-tertiary: #866d74;
+  --dsw-alias-label-caption: #9a828a;
+  --dsw-alias-label-dimmed: #b3a0a6;
+  --dsw-alias-link: #b02a44;
+
+  --dsw-alias-brand-primary: #cf3852;
+  --dsw-alias-brand-text: #a82438;
+  --dsw-alias-interactive-bg-hover: #cf385214;
+  --dsw-alias-interactive-bg-active: #cf385222;
+  --dsw-alias-interactive-bg-hover-accent: #cf38521f;
+  --dsw-alias-button-primary-fill: #c22f48;
+  --dsw-alias-button-primary-hover: #a82438;
+  --dsw-alias-button-ghost-active-fill: #cf38521a;
+  --dsw-alias-button-ghost-active-border: #cf385240;
+  --dsw-alias-button-ghost-active-hover: #cf385226;
+
+  --dsw-alias-markdown-code-block: #c22f480d;
+  --dsw-alias-markdown-code-block-banner: #c22f481a;
+  --dsw-alias-markdown-inline-code: #c22f4814;
+  --dsw-alias-state-success-primary: #127a5c;
+  --dsw-alias-state-warn-primary: #a86a10;
+  --dsw-alias-state-error-primary: #bf2a3f;
+  --dsw-alias-state-business-primary: #6c4bd8;
+  --dsw-alias-state-idle-primary: #8a7a7e;
+
+  --dsw-alias-settings-card-fill: #ffffff;
+  --dsw-alias-settings-card-stroke: #5c1a281a;
+  --dsw-alias-turn-trigger-bg: #fbeaec;
+  --dsw-alias-turn-trigger-bg-hover: #f7dfe3;
+  --dsw-alias-toast-bg: #ffffff;
+  --dsw-alias-toast-label: #2a171b;
+  --dsw-alias-tooltip-bg: #2f1c22;
+  --dsw-alias-tooltip-key-bg: #3b252c;
+  --dsw-alias-menu-icon: #6b5258;
+  --dsw-alias-menu-group-header-fill: #cf38520a;
+  --dsw-alias-scrollbar-bg-l1: #5c1a2833;
+  --dsw-alias-scrollbar-hover-l1: #5c1a2852;
+  --dsw-alias-scrollbar-bg-l2: #5c1a283d;
+  --dsw-alias-scrollbar-hover-l2: #5c1a285c;
+
+  --vv-accent: #cf3852;
+  --vv-heading: #a3203a;
+  --vv-heading-soft: #a8455c;
+  --vv-strong: #1a0f12;
+  --vv-line: #5c1a282b;
+  --vv-line-soft: #5c1a281f;
+  --vv-link-underline: #b02a4473;
+  --vv-code-bg: #c22f480a;
+  --vv-inline-code-bg: #c22f4812;
+  --vv-inline-code-border: #c22f482e;
+  --vv-inline-code-fg: #7a1a2e;
+  --vv-quote-bg: #c22f480a;
+  --vv-table-head: #c22f4814;
+  --vv-table-zebra: #5c1a2808;
+  --vv-marker: #cf3852;
+  --vv-selection: #dc5a7038;
+  --vv-glow: #ff6a7a1a;
+  --vv-glow-2: #ff9a6a12;
+  --vv-sidebar-fill: #fbeef0;
+  --vv-hover: #8a243812;
+  --vv-active: #8a243821;
+  --vv-tip: #f7e6e9;
+}
