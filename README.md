@@ -23,7 +23,7 @@ client half adds a *Color theme* row under **Settings > General**.
 | Palettes | `aurora`, `ember`, `mint`, `sakura`, `iris`, `slate`, `moss`, `crimson`, `arctic`, `voltage`, `sand`, `noir` — each light and dark |
 | Host hook | `webserver/index-inject`, one `<style>` line, no harness patches |
 | Settings row | **Settings > General > Color theme** |
-| DSH | `>=0.2.1-rc.5 <0.3.0` |
+| DSH | `"dsh": ">=0.2.2-rc.1 <0.3.0"` |
 | License | MIT |
 | Preview | https://PHSchr3ck3.github.io/dsh-theme-vivid/ |
 
