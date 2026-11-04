@@ -56,7 +56,11 @@ Live preview: https://PHSchr3ck3.github.io/dsh-theme-vivid/
 
 ## Screenshots
 
-The *Color theme* row in **Settings > General**, switched through the palettes:
+**Current palette menu** — 15 palettes plus *Default*:
+
+![Color theme menu in the DSH settings dialog](docs/shots/menu.png)
+
+The same row switched through three palettes:
 
 **Aurora**
 
