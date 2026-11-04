@@ -1,0 +1,476 @@
+/* ===== DSH Vivid Theme: Gilded =====
+   Generiert von dsh-themes/build.mjs — nicht direkt bearbeiten. */
+
+/* =========================================================================
+   Palette: GILDED  —  tiefes Marineblau mit Zitronengold, kuehle Flaeche und warmer Akzent
+   Erzeugt wie alle Paletten aus dem gemeinsamen Tokensatz; Licht und Dunkel
+   folgen dem System-Erscheinungsbild.
+   ========================================================================= */
+
+/* ---------- Dunkelmodus ---------- */
+html body[data-ds-dark-theme] {
+  /* Flaechen */
+  --dsw-alias-bg-base: #0a1120;
+  --dsw-alias-bg-layer-1: #101a2c;
+  --dsw-alias-bg-layer-2: #131e33;
+  --dsw-alias-bg-layer-3: #1c2a44;
+  --dsw-alias-bg-overlay: #0a1120f2;
+  --dsw-alias-bg-mask-1: #0a1120b3;
+  --dsw-alias-bg-mask-2: #0a1120d9;
+  --dsw-alias-bg-mask-3: #0a1120f2;
+  --dsw-alias-bg-skeleton: #121c2f;
+
+  /* Linien */
+  --dsw-alias-border-l1: #efe63c29;
+  --dsw-alias-border-l2: #efe63c38;
+  --dsw-alias-border-l3: #efe63c4d;
+  --dsw-alias-border-l4: #efe63c6b;
+
+  /* Schrift */
+  --dsw-alias-label-primary: #e3e4e5;
+  --dsw-alias-label-primary-bluish: #e4e4d7;
+  --dsw-alias-label-primary-dimmed: #babcc1;
+  --dsw-alias-label-secondary: #a4a7ac;
+  --dsw-alias-label-tertiary: #82868d;
+  --dsw-alias-label-caption: #6c7079;
+  --dsw-alias-label-dimmed: #5b606a;
+  --dsw-alias-link: #f4ee7a;
+
+  /* Marke + Interaktion */
+  --dsw-alias-brand-primary: #efe63c;
+  --dsw-alias-brand-primary-invert: #0a1120;
+  --dsw-alias-brand-text: #f6f18e;
+  --dsw-alias-interactive-bg-hover: #efe63c14;
+  --dsw-alias-interactive-bg-active: #efe63c21;
+  --dsw-alias-interactive-bg-hover-accent: #efe63c26;
+  --dsw-alias-button-primary-fill: #dcd437;
+  --dsw-alias-button-primary-hover: #f0e84c;
+  --dsw-alias-button-ghost-active-fill: #efe63c1f;
+  --dsw-alias-button-ghost-active-border: #efe63c47;
+  --dsw-alias-button-ghost-active-hover: #efe63c2e;
+
+  /* Markdown */
+  --dsw-alias-markdown-code-block: #efe63c12;
+  --dsw-alias-markdown-code-block-banner: #efe63c1f;
+  --dsw-alias-markdown-inline-code: #efe63c24;
+  --dsw-alias-markdown-citation: #efe63c3d;
+  --dsw-alias-markdown-tag: #efe63c2b;
+
+  /* Zustaende */
+  --dsw-alias-state-success-primary: #4ed2a6;
+  --dsw-alias-state-success-secondary: #4ed2a626;
+  --dsw-alias-state-success-tertiary: #4ed2a614;
+  --dsw-alias-state-warn-primary: #f0b45e;
+  --dsw-alias-state-warn-label: #f5c47c;
+  --dsw-alias-state-warn-secondary: #f0b45e26;
+  --dsw-alias-state-warn-tertiary: #f0b45e14;
+  --dsw-alias-state-error-primary: #f1798a;
+  --dsw-alias-state-error-secondary: #f1798a26;
+  --dsw-alias-state-business-primary: #9aa8ff;
+  --dsw-alias-state-business-tertiary: #9aa8ff26;
+  --dsw-alias-state-idle-primary: #7a8598;
+
+  /* Chrome */
+  --dsw-alias-settings-card-fill: #101a2c;
+  --dsw-alias-settings-card-stroke: #efe63c2b;
+  --dsw-alias-turn-trigger-bg: #101a2c;
+  --dsw-alias-turn-trigger-bg-hover: #131e33;
+  --dsw-alias-toast-bg: #131e33;
+  --dsw-alias-toast-label: #e3e4e5;
+  --dsw-alias-tooltip-bg: #1c2a44;
+  --dsw-alias-tooltip-key-bg: #2e3b53;
+  --dsw-alias-menu-icon: #a4a7ac;
+  --dsw-alias-menu-group-header-fill: #efe63c0f;
+  --dsw-alias-scrollbar-bg-l1: #efe63c38;
+  --dsw-alias-scrollbar-hover-l1: #efe63c5c;
+  --dsw-alias-scrollbar-bg-l2: #efe63c42;
+  --dsw-alias-scrollbar-hover-l2: #efe63c66;
+
+  /* Vivid-Ebene */
+  --vv-accent: #efe63c;
+  --vv-heading: #f7f39e;
+  --vv-heading-soft: #f4ef7e;
+  --vv-strong: #f3f3f4;
+  --vv-line: #efe63c33;
+  --vv-line-soft: #efe63c24;
+  --vv-link-underline: #f4ee7a73;
+  --vv-code-bg: #efe63c0e;
+  --vv-inline-code-bg: #efe63c21;
+  --vv-inline-code-border: #efe63c38;
+  --vv-inline-code-fg: #f9f6b5;
+  --vv-quote-bg: #efe63c0f;
+  --vv-table-head: #efe63c1a;
+  --vv-table-zebra: #ffffff09;
+  --vv-marker: #efe63c;
+  --vv-selection: #efe63c4d;
+  --vv-glow: #efe63c17;
+  --vv-glow-2: #6f9ef012;
+  --vv-sidebar-fill: #080e1a;
+  --vv-hover: #efe63c17;
+  --vv-active: #efe63c26;
+  --vv-tip: #131e33;
+}
+
+/* ---------- Hellmodus ---------- */
+html body:not([data-ds-dark-theme]) {
+  --dsw-alias-bg-base: #f3f5f9;
+  --dsw-alias-bg-layer-1: #fbfcfd;
+  --dsw-alias-bg-layer-2: #eef0f4;
+  --dsw-alias-bg-layer-3: #e6e8eb;
+  --dsw-alias-bg-skeleton: #eaecf0;
+
+  --dsw-alias-border-l1: #8a6a081f;
+  --dsw-alias-border-l2: #8a6a082e;
+  --dsw-alias-border-l3: #8a6a0842;
+  --dsw-alias-border-l4: #8a6a085c;
+
+  --dsw-alias-label-primary: #222223;
+  --dsw-alias-label-primary-bluish: #2c2920;
+  --dsw-alias-label-secondary: #4e4e50;
+  --dsw-alias-label-tertiary: #6b6c6e;
+  --dsw-alias-label-caption: #7e7f81;
+  --dsw-alias-label-dimmed: #929395;
+  --dsw-alias-link: #755a07;
+
+  --dsw-alias-brand-primary: #8a6a08;
+  --dsw-alias-brand-text: #715707;
+  --dsw-alias-interactive-bg-hover: #8a6a0814;
+  --dsw-alias-interactive-bg-active: #8a6a0821;
+  --dsw-alias-interactive-bg-hover-accent: #8a6a081f;
+  --dsw-alias-button-primary-fill: #8a6a08;
+  --dsw-alias-button-primary-hover: #755a07;
+  --dsw-alias-button-ghost-active-fill: #8a6a081a;
+  --dsw-alias-button-ghost-active-border: #8a6a0842;
+  --dsw-alias-button-ghost-active-hover: #8a6a0829;
+
+  --dsw-alias-markdown-code-block: #8a6a080d;
+  --dsw-alias-markdown-code-block-banner: #8a6a081a;
+  --dsw-alias-markdown-inline-code: #8a6a0814;
+  --dsw-alias-state-success-primary: #12866a;
+  --dsw-alias-state-warn-primary: #a86a12;
+  --dsw-alias-state-error-primary: #c2404f;
+  --dsw-alias-state-business-primary: #3c5fd2;
+  --dsw-alias-state-idle-primary: #7a8598;
+
+  --dsw-alias-settings-card-fill: #ffffff;
+  --dsw-alias-settings-card-stroke: #8a6a081a;
+  --dsw-alias-turn-trigger-bg: #eef0f4;
+  --dsw-alias-turn-trigger-bg-hover: #e6e8eb;
+  --dsw-alias-toast-bg: #ffffff;
+  --dsw-alias-toast-label: #222223;
+  --dsw-alias-tooltip-bg: #242525;
+  --dsw-alias-tooltip-key-bg: #444546;
+  --dsw-alias-menu-icon: #4e4e50;
+  --dsw-alias-menu-group-header-fill: #8a6a080a;
+  --dsw-alias-scrollbar-bg-l1: #8a6a082e;
+  --dsw-alias-scrollbar-hover-l1: #8a6a084d;
+  --dsw-alias-scrollbar-bg-l2: #8a6a0838;
+  --dsw-alias-scrollbar-hover-l2: #8a6a0857;
+
+  --vv-accent: #8a6a08;
+  --vv-heading: #5a4505;
+  --vv-heading-soft: #483704;
+  --vv-strong: #1d1d1e;
+  --vv-line: #8a6a0829;
+  --vv-line-soft: #8a6a081f;
+  --vv-link-underline: #755a076b;
+  --vv-code-bg: #8a6a080a;
+  --vv-inline-code-bg: #8a6a0812;
+  --vv-inline-code-border: #8a6a082e;
+  --vv-inline-code-fg: #614a06;
+  --vv-quote-bg: #8a6a080a;
+  --vv-table-head: #8a6a0814;
+  --vv-table-zebra: #00000005;
+  --vv-marker: #8a6a08;
+  --vv-selection: #8a6a0838;
+  --vv-glow: #8a6a081a;
+  --vv-glow-2: #37527f12;
+  --vv-sidebar-fill: #edeff3;
+  --vv-hover: #8a6a0812;
+  --vv-active: #8a6a081f;
+  --vv-tip: #e8eaee;
+}
+
+
+/* =========================================================================
+   DSH Vivid — gemeinsame Komponenten-Ebene
+   -------------------------------------------------------------------------
+   Diese Datei enthaelt KEINE Farbwerte. Sie liest ausschliesslich die
+   --vv-* Variablen, die jede Palette definiert, und die offiziellen
+   --dsw-* Tokens des Harness. Dadurch ergibt jede Palette automatisch ein
+   stimmiges Gesamtbild.
+   -------------------------------------------------------------------------
+   Selektoren sind absichtlich spezifischer als die Harness-Stylesheets
+   (html body[...] = 0,0,1,2 bzw. 0,0,0,2) und laufen deshalb auch dann,
+   wenn die Runtime-Styles spaeter im Dokument eingefuegt werden.
+   ========================================================================= */
+
+/* ---------- 1. Lese-Komfort: Rhythmus, Auswahl, Fokus ---------- */
+
+html body {
+  /* Etwas mehr Luft zwischen den Zeilen nimmt den harten Kontrast raus. */
+  --dsw-font-markdown-base-line-height: 1.72;
+  --dsw-font-markdown-small-line-height: 1.6;
+  /* Radius-Skala: der Client kann beide Werte zur Laufzeit ueberschreiben. */
+  --vv-radius: 12px;
+  --vv-radius-sm: 7px;
+  --dsh-content-letter-spacing: 0.012em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Sanfter Farb-Glow oben links: nimmt dem fast schwarzen Canvas die Haerte. */
+html body {
+  background-image: radial-gradient(
+      1200px 520px at 0% -10%,
+      var(--vv-glow) 0%,
+      transparent 62%
+    ),
+    radial-gradient(900px 420px at 100% 0%, var(--vv-glow-2) 0%, transparent 60%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+html body ::selection {
+  background: var(--vv-selection);
+  color: var(--dsw-alias-label-primary);
+}
+
+/* ---------- 2. Prosa: Grundraster ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) p {
+  margin-block: 0.68em;
+}
+
+/* ---------- 3. Prosa: Ueberschriften ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h1,
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h2,
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h3,
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h4 {
+  color: var(--vv-heading);
+  letter-spacing: 0.005em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h1 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--vv-line);
+}
+
+/* Abschnitts-Kopf: schmale Akzentkante plus sehr weicher Farbverlauf.
+   Das trennt Abschnitte deutlicher, ohne wie eine Warnbox zu wirken. */
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h2 {
+  margin-block: 1.35em 0.55em;
+  padding: 0.22em 0.7em 0.22em 0.72em;
+  border-left: 3px solid var(--vv-accent);
+  border-radius: var(--vv-radius-sm);
+  background: linear-gradient(90deg, var(--vv-quote-bg) 0%, transparent 78%);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h3 {
+  margin-block-start: 1.2em;
+  color: var(--vv-heading-soft);
+}
+
+/* ---------- 4. Prosa: Hervorhebungen ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) strong {
+  color: var(--vv-strong);
+  font-weight: 620;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) em {
+  color: var(--vv-heading-soft);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) del {
+  color: var(--dsw-alias-label-tertiary);
+}
+
+/* ---------- 5. Prosa: Links ---------- */
+
+/* Farbige Links ohne Dauer-Unterstrich: In dichten Antworten mit vielen
+   Quellenverweisen war die durchgehende Unterstreichung visuell zu laut. */
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) a {
+  color: var(--dsw-alias-link);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) a:hover {
+  color: var(--vv-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2.5px;
+  text-decoration-color: var(--vv-link-underline);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) a:focus-visible {
+  outline: 2px solid var(--vv-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ---------- 6. Prosa: Inline-Code als Chip ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :not(pre) > code {
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--vv-inline-code-border);
+  border-radius: var(--vv-radius-sm);
+  background: var(--vv-inline-code-bg);
+  color: var(--vv-inline-code-fg);
+  font-weight: 500;
+  white-space: break-spaces;
+}
+
+/* ---------- 7. Prosa: Codebloecke ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) pre {
+  border: 1px solid var(--vv-line);
+  border-radius: var(--vv-radius);
+  background: var(--vv-code-bg);
+  box-shadow: inset 0 1px 0 var(--vv-line-soft);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) pre code {
+  background: none;
+  border: 0;
+  color: var(--dsw-alias-label-primary);
+}
+
+/* ---------- 8. Prosa: Zitate ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) blockquote {
+  margin: 0.85em 0;
+  padding: 0.6em 0.95em;
+  border-left: 3px solid var(--vv-accent);
+  border-radius: 0 var(--vv-radius) var(--vv-radius) 0;
+  background: var(--vv-quote-bg);
+  color: var(--dsw-alias-label-secondary);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) blockquote > :first-child {
+  margin-top: 0;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 9. Prosa: Tabellen ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--vv-line);
+  border-radius: var(--vv-radius);
+  overflow: hidden;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) thead th {
+  background: var(--vv-table-head);
+  color: var(--dsw-alias-label-primary);
+  font-weight: 620;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) tbody tr:nth-child(even) {
+  background: var(--vv-table-zebra);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :is(th, td) {
+  border-color: var(--vv-line-soft);
+}
+
+/* ---------- 10. Prosa: Listen, Trennlinien ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) li {
+  margin-block: 0.3em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) li > p {
+  margin-block: 0.2em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) li::marker {
+  color: var(--vv-marker);
+}
+
+/* Unterpunkte treten zurueck, damit die Hauptpunkte fuehren. */
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :is(ul, ol) :is(ul, ol) {
+  margin-block: 0.25em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :is(ul, ol) :is(ul, ol) li::marker {
+  color: var(--dsw-alias-label-tertiary);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) hr {
+  height: 1px;
+  margin: 1.25em 0;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--vv-line), transparent);
+}
+
+/* ---------- 11. Prosa: kleine Auszeichnungen ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) mark {
+  padding: 0.05em 0.25em;
+  border-radius: 4px;
+  background: var(--vv-selection);
+  color: var(--dsw-alias-label-primary);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) kbd {
+  padding: 0.05em 0.35em;
+  border: 1px solid var(--vv-line);
+  border-bottom-width: 2px;
+  border-radius: var(--vv-radius-sm);
+  background: var(--vv-inline-code-bg);
+  color: var(--dsw-alias-label-secondary);
+  font-size: 0.9em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) summary {
+  color: var(--dsw-alias-label-secondary);
+  cursor: pointer;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) summary:hover,
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) details[open] > summary {
+  color: var(--dsw-alias-label-primary);
+}
+
+/* ---------- 12. Chrome: Sidebar, Menues, Karten ---------- */
+
+html body {
+  --dsw-specific-sidebar-fill: var(--vv-sidebar-fill);
+  --dsw-specific-sidebar-nav-item-hover: var(--vv-hover);
+  --dsw-specific-sidebar-nav-item-active: var(--vv-active);
+  --dsw-specific-sidebar-nav-item-active-accent: var(--vv-accent);
+  --dsw-specific-tip: var(--vv-tip);
+}
+
+/* Fokusring in der Akzentfarbe statt im Standardblau. */
+html body {
+  --dsw-focus-ring-color: var(--vv-accent);
+}
+
+/* ---------- 13. Statuszeilen farblich lesbar ---------- */
+
+html body [data-status='error'],
+html body [data-state='error'] {
+  --dsw-alias-label-primary: var(--dsw-alias-state-error-primary);
+}
+
+/* ---------- 14. Druck ---------- */
+@media print {
+  html body {
+    background-image: none;
+  }
+}
+

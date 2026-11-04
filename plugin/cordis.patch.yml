@@ -1,6 +1,7 @@
 # Wird beim Einbau dieses Pakets als DSH-Bundle automatisch angewendet.
 # Theme wechseln: config.theme auf aurora | ember | mint | sakura | iris | slate |
-#                  moss | crimson | arctic | voltage | sand | noir setzen.
+#                  moss | crimson | arctic | voltage | sand | noir | gilded |
+#                  jade | orchid setzen.
 # Danach Harness neu starten (das Desktop-Profil sammelt die
 # Injection-Tabelle beim Boot ein).
 - insert:

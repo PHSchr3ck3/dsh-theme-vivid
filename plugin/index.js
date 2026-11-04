@@ -64,6 +64,12 @@ export function pickCssPath(config) {
  * @param {{ theme?: string, cssPath?: string }} [config]
  */
 export function apply(ctx, config) {
+  /* Bei einem API-Wechsel im Harness lieber ohne Theme weiterlaufen als die GUI stoeren. */
+  if (typeof ctx?.on !== 'function') {
+    ctx?.logger?.warn?.('theme-vivid: ctx.on fehlt — Theme wird nicht injiziert')
+    return
+  }
+
   const cssPath = pickCssPath(config)
   if (typeof config?.theme === 'string' && !existsSync(themePath(config.theme))) {
     ctx.logger?.warn?.(`theme-vivid: Theme "${config.theme}" fehlt, nutze ${DEFAULT_THEME}`)
@@ -83,13 +89,19 @@ export function apply(ctx, config) {
     }
   }
 
-  ctx.on('webserver/index-inject', (table) => {
-    const css = readCss()
-    if (css.trim() === '') return
-    if (css.includes('</style')) {
-      ctx.logger?.warn?.('theme-vivid: CSS enthaelt "</style" — Injection uebersprungen')
-      return
-    }
-    table.push({ kind: 'style', text: `\n/* dsh-theme-vivid: ${cssPath} */\n${css}\n` })
-  })
+  try {
+    ctx.on('webserver/index-inject', (table) => {
+      /* Erwartet wird ein Array; eine geaenderte Signatur wird still ignoriert. */
+      if (!Array.isArray(table)) return
+      const css = readCss()
+      if (css.trim() === '') return
+      if (css.includes('</style')) {
+        ctx.logger?.warn?.('theme-vivid: CSS enthaelt "</style" — Injection uebersprungen')
+        return
+      }
+      table.push({ kind: 'style', text: `\n/* dsh-theme-vivid: ${cssPath} */\n${css}\n` })
+    })
+  } catch (error) {
+    ctx.logger?.warn?.(`theme-vivid: Injection nicht registriert (${String(error?.message ?? error)})`)
+  }
 }

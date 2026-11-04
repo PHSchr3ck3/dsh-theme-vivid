@@ -9,7 +9,8 @@ und injiziert ein `<style>` in den Seitenkopf.
 `aurora` (kuehl/blau), `ember` (warm/bernstein), `mint` (teal/gruen),
 `sakura` (rose/plum), `iris` (violett), `slate` (graphit/stahl),
 `moss` (waldgruen/oliv), `crimson` (granatrot), `arctic` (eiscyan),
-`voltage` (neon-magenta), `sand` (pergament/lehm), `noir` (schwarz/silber)
+`voltage` (neon-magenta), `sand` (pergament/lehm), `noir` (schwarz/silber),
+`gilded` (marineblau/gold), `jade` (greige/smaragd), `orchid` (graphit/magenta)
 — jede Palette hell und dunkel.
 
 ## Installation
@@ -32,6 +33,21 @@ eingesammelt. Nach Installation oder Theme-Wechsel die App neu starten.
 | `cssPath` | direkter Pfad zu einer CSS-Datei; gewinnt gegen `theme` |
 
 `DSH_VIVID_CSS` (Umgebungsvariable) gewinnt gegen beides.
+
+## Anpassen
+
+Unter **Einstellungen > Allgemein > Color theme** stehen alle fuenfzehn Paletten
+zur Auswahl. Der Bereich **Customize** setzt Akzent-, Hintergrund-, Text- und
+Ueberschriftenfarbe sowie Akzentstaerke, Textkontrast, Zeilenhoehe und den
+Eckenradius. Farben und Regler gelten getrennt fuer hell und dunkel, der Radius
+fuer beide; alles bleibt unter dem stabilen Schluessel `dsh-theme-vivid.custom`
+gespeichert, ein Plugin-Update setzt es nicht zurueck. `install.ps1` legt vor
+dem Ueberschreiben ein Backup von `theme.css` an.
+
+Dazu kommen drei Presets, die mit jeder Palette laufen: **Studio** (Sans),
+**Book** (Serif, warm) und **Terminal** (Mono, krisp). Sie setzen Schriftart und
+Farbnote, wobei alle Farben aus der aktiven Palette abgeleitet werden; eigene
+Anpassungen im Customize-Bereich gewinnen gegen das Preset.
 
 ## Alle Paletten exportieren
 

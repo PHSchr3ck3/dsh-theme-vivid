@@ -2,7 +2,8 @@
 <#
 .SYNOPSIS
     Installiert ein DSH-Theme (Aurora / Ember / Mint / Sakura / Iris / Slate /
-    Moss / Crimson / Arctic / Voltage / Sand / Noir) in ein Harness-Profil.
+    Moss / Crimson / Arctic / Voltage / Sand / Noir / Gilded / Jade / Orchid)
+    in ein Harness-Profil.
 
 .DESCRIPTION
     Kopiert das Host-Plugin "dsh-theme-vivid" in <Profil>\node_modules,
@@ -13,7 +14,9 @@
     aurora (kuehl/blau), ember (warm/bernstein), mint (teal/gruen),
     sakura (rose/plum), iris (violett), slate (graphit/stahl),
     moss (waldgruen), crimson (granatrot), arctic (eiscyan),
-    voltage (neon-magenta), sand (pergament) oder noir (schwarz/silber).
+    voltage (neon-magenta), sand (pergament), noir (schwarz/silber),
+    gilded (marineblau/gold), jade (greige/smaragd) oder orchid
+    (graphit/magenta).
 
 .PARAMETER ProfileDir
     Profilordner, Standard: $env:DSH_PROFILE_DIR (sonst ~\.dsh\profiles\desktop).
@@ -23,7 +26,7 @@
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('aurora', 'ember', 'mint', 'sakura', 'iris', 'slate', 'moss', 'crimson', 'arctic', 'voltage', 'sand', 'noir')]
+    [ValidateSet('aurora', 'ember', 'mint', 'sakura', 'iris', 'slate', 'moss', 'crimson', 'arctic', 'voltage', 'sand', 'noir', 'gilded', 'jade', 'orchid')]
     [string]$Theme = 'aurora',
 
     [string]$ProfileDir = $env:DSH_PROFILE_DIR
@@ -52,7 +55,16 @@ Write-Host "Ziel    : $target"
 New-Item -ItemType Directory -Path $target -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $pluginSrc 'index.js') -Destination $target -Force
 Copy-Item -LiteralPath (Join-Path $pluginSrc 'package.json') -Destination $target -Force
-Copy-Item -LiteralPath $css -Destination (Join-Path $target 'theme.css') -Force
+
+# Eigene CSS-Anpassungen im Profil nicht stillschweigend ueberschreiben.
+$themeTarget = Join-Path $target 'theme.css'
+if (Test-Path -LiteralPath $themeTarget) {
+    $themeStamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+    $themeBackup = "$themeTarget.bak-$themeStamp"
+    Copy-Item -LiteralPath $themeTarget -Destination $themeBackup -Force
+    Write-Host "Backup  : $themeBackup"
+}
+Copy-Item -LiteralPath $css -Destination $themeTarget -Force
 Copy-Item -LiteralPath (Join-Path $pluginSrc 'cordis.patch.yml') -Destination $target -Force
 $clientFile = Join-Path $pluginSrc 'client.js'
 if (Test-Path -LiteralPath $clientFile) {

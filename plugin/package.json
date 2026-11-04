@@ -1,7 +1,7 @@
 {
   "name": "dsh-theme-vivid",
-  "version": "1.1.0",
-  "description": "Vivid colour themes for DeepSeek Harness: twelve palettes from Aurora to Noir, each with a light and a dark variant.",
+  "version": "1.2.0",
+  "description": "Vivid colour themes for DeepSeek Harness: fifteen palettes from Aurora to Orchid, each with a light and a dark variant.",
   "type": "module",
   "main": "index.js",
   "bin": {
@@ -63,6 +63,9 @@
     "sakura",
     "iris",
     "slate",
+    "gilded",
+    "jade",
+    "orchid",
     "moss",
     "crimson",
     "arctic",

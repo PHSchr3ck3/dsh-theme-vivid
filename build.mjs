@@ -23,14 +23,23 @@ const NAMES = {
   aurora: 'Aurora',
   crimson: 'Crimson',
   ember: 'Ember',
+  gilded: 'Gilded',
   iris: 'Iris',
+  jade: 'Jade',
   mint: 'Mint',
   moss: 'Moss',
   noir: 'Noir',
+  orchid: 'Orchid',
   sakura: 'Sakura',
   sand: 'Sand',
   slate: 'Slate',
   voltage: 'Voltage',
+}
+
+/** Akzentfarbe je Erscheinungsbild direkt aus der Palette lesen. */
+function accentPair(css) {
+  const found = [...css.matchAll(/--vv-accent:\s*(#[0-9a-fA-F]{6})/g)].map((match) => match[1])
+  return { dark: found[0] ?? '#7ca8ff', light: found[1] ?? found[0] ?? '#3d78e8' }
 }
 
 function fail(message) {
@@ -90,12 +99,19 @@ function build() {
     writeFileSync(join(pluginThemesDir, `${id}.css`), css, 'utf8')
     mkdirSync(join(previewDir, 'dist'), { recursive: true })
     writeFileSync(join(previewDir, 'dist', `${id}.css`), css, 'utf8')
-    built.push({ id, css })
+    built.push({ id, css, accent: accentPair(palette) })
   }
 
   const clientTemplate = readFileSync(join(root, 'client', 'client.template.js'), 'utf8')
   const cssMap = Object.fromEntries(built.map(({ id, css }) => [id, css]))
-  writeFileSync(join(root, 'plugin', 'client.js'), clientTemplate.replace('__DSH_VIVID_THEMES__', JSON.stringify(cssMap)), 'utf8')
+  const accentMap = Object.fromEntries(built.map(({ id, accent }) => [id, accent]))
+  writeFileSync(
+    join(root, 'plugin', 'client.js'),
+    clientTemplate
+      .replace('__DSH_VIVID_THEMES__', JSON.stringify(cssMap))
+      .replace('__DSH_VIVID_ACCENTS__', JSON.stringify(accentMap)),
+    'utf8',
+  )
   console.log('✔ Plug-in-Client: plugin/client.js')
 
   const template = readFileSync(join(previewDir, 'mock.html'), 'utf8')

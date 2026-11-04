@@ -210,8 +210,11 @@ html body:not([data-ds-dark-theme]) {
 
 html body {
   /* Etwas mehr Luft zwischen den Zeilen nimmt den harten Kontrast raus. */
-  --dsw-font-markdown-base-line-height: 1.7;
+  --dsw-font-markdown-base-line-height: 1.72;
   --dsw-font-markdown-small-line-height: 1.6;
+  /* Radius-Skala: der Client kann beide Werte zur Laufzeit ueberschreiben. */
+  --vv-radius: 12px;
+  --vv-radius-sm: 7px;
   --dsh-content-letter-spacing: 0.012em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -234,7 +237,18 @@ html body ::selection {
   color: var(--dsw-alias-label-primary);
 }
 
-/* ---------- 2. Prosa: Ueberschriften ---------- */
+/* ---------- 2. Prosa: Grundraster ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) p {
+  margin-block: 0.68em;
+}
+
+/* ---------- 3. Prosa: Ueberschriften ---------- */
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h1,
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h2,
@@ -249,17 +263,22 @@ html body ::selection {
   border-bottom: 1px solid var(--vv-line);
 }
 
+/* Abschnitts-Kopf: schmale Akzentkante plus sehr weicher Farbverlauf.
+   Das trennt Abschnitte deutlicher, ohne wie eine Warnbox zu wirken. */
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h2 {
-  padding-left: 10px;
+  margin-block: 1.35em 0.55em;
+  padding: 0.22em 0.7em 0.22em 0.72em;
   border-left: 3px solid var(--vv-accent);
-  border-radius: 2px;
+  border-radius: var(--vv-radius-sm);
+  background: linear-gradient(90deg, var(--vv-quote-bg) 0%, transparent 78%);
 }
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) h3 {
+  margin-block-start: 1.2em;
   color: var(--vv-heading-soft);
 }
 
-/* ---------- 3. Prosa: Hervorhebungen ---------- */
+/* ---------- 4. Prosa: Hervorhebungen ---------- */
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) strong {
   color: var(--vv-strong);
@@ -270,36 +289,51 @@ html body ::selection {
   color: var(--vv-heading-soft);
 }
 
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) del {
+  color: var(--dsw-alias-label-tertiary);
+}
+
+/* ---------- 5. Prosa: Links ---------- */
+
+/* Farbige Links ohne Dauer-Unterstrich: In dichten Antworten mit vielen
+   Quellenverweisen war die durchgehende Unterstreichung visuell zu laut. */
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) a {
   color: var(--dsw-alias-link);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  text-decoration-color: var(--vv-link-underline);
+  text-decoration: none;
+  transition: color 120ms ease;
 }
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) a:hover {
   color: var(--vv-accent);
-  text-decoration-color: currentColor;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2.5px;
+  text-decoration-color: var(--vv-link-underline);
 }
 
-/* ---------- 4. Prosa: Inline-Code als Chip ---------- */
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) a:focus-visible {
+  outline: 2px solid var(--vv-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ---------- 6. Prosa: Inline-Code als Chip ---------- */
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :not(pre) > code {
   padding: 0.1em 0.4em;
   border: 1px solid var(--vv-inline-code-border);
-  border-radius: 6px;
+  border-radius: var(--vv-radius-sm);
   background: var(--vv-inline-code-bg);
   color: var(--vv-inline-code-fg);
   font-weight: 500;
   white-space: break-spaces;
 }
 
-/* ---------- 5. Prosa: Codebloecke ---------- */
+/* ---------- 7. Prosa: Codebloecke ---------- */
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) pre {
   border: 1px solid var(--vv-line);
-  border-radius: 12px;
+  border-radius: var(--vv-radius);
   background: var(--vv-code-bg);
   box-shadow: inset 0 1px 0 var(--vv-line-soft);
 }
@@ -310,13 +344,13 @@ html body ::selection {
   color: var(--dsw-alias-label-primary);
 }
 
-/* ---------- 6. Prosa: Zitate ---------- */
+/* ---------- 8. Prosa: Zitate ---------- */
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) blockquote {
   margin: 0.85em 0;
   padding: 0.6em 0.95em;
   border-left: 3px solid var(--vv-accent);
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 var(--vv-radius) var(--vv-radius) 0;
   background: var(--vv-quote-bg);
   color: var(--dsw-alias-label-secondary);
 }
@@ -329,13 +363,13 @@ html body ::selection {
   margin-bottom: 0;
 }
 
-/* ---------- 7. Prosa: Tabellen ---------- */
+/* ---------- 9. Prosa: Tabellen ---------- */
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) table {
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid var(--vv-line);
-  border-radius: 10px;
+  border-radius: var(--vv-radius);
   overflow: hidden;
 }
 
@@ -353,10 +387,27 @@ html body ::selection {
   border-color: var(--vv-line-soft);
 }
 
-/* ---------- 8. Prosa: Listen, Trennlinien ---------- */
+/* ---------- 10. Prosa: Listen, Trennlinien ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) li {
+  margin-block: 0.3em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) li > p {
+  margin-block: 0.2em;
+}
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) li::marker {
   color: var(--vv-marker);
+}
+
+/* Unterpunkte treten zurueck, damit die Hauptpunkte fuehren. */
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :is(ul, ol) :is(ul, ol) {
+  margin-block: 0.25em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) :is(ul, ol) :is(ul, ol) li::marker {
+  color: var(--dsw-alias-label-tertiary);
 }
 
 :is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) hr {
@@ -366,7 +417,36 @@ html body ::selection {
   background: linear-gradient(90deg, transparent, var(--vv-line), transparent);
 }
 
-/* ---------- 9. Chrome: Sidebar, Menues, Karten ---------- */
+/* ---------- 11. Prosa: kleine Auszeichnungen ---------- */
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) mark {
+  padding: 0.05em 0.25em;
+  border-radius: 4px;
+  background: var(--vv-selection);
+  color: var(--dsw-alias-label-primary);
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) kbd {
+  padding: 0.05em 0.35em;
+  border: 1px solid var(--vv-line);
+  border-bottom-width: 2px;
+  border-radius: var(--vv-radius-sm);
+  background: var(--vv-inline-code-bg);
+  color: var(--dsw-alias-label-secondary);
+  font-size: 0.9em;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) summary {
+  color: var(--dsw-alias-label-secondary);
+  cursor: pointer;
+}
+
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) summary:hover,
+:is([data-conversation-content], [data-conversation-scroll], [data-conversation-region]) details[open] > summary {
+  color: var(--dsw-alias-label-primary);
+}
+
+/* ---------- 12. Chrome: Sidebar, Menues, Karten ---------- */
 
 html body {
   --dsw-specific-sidebar-fill: var(--vv-sidebar-fill);
@@ -381,14 +461,14 @@ html body {
   --dsw-focus-ring-color: var(--vv-accent);
 }
 
-/* ---------- 10. Statuszeilen farblich lesbar ---------- */
+/* ---------- 13. Statuszeilen farblich lesbar ---------- */
 
 html body [data-status='error'],
 html body [data-state='error'] {
   --dsw-alias-label-primary: var(--dsw-alias-state-error-primary);
 }
 
-/* ---------- 11. Druck ---------- */
+/* ---------- 14. Druck ---------- */
 @media print {
   html body {
     background-image: none;
